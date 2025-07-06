@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asisten Digital Guru PJOK SMA/SMK/MA (Struktur Terintegrasi)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f9ff; /* sky-50 */
+        }
+        .prose { max-width: 100%; font-family: 'Poppins', sans-serif; }
+        .prose h1, .prose h2, .prose h3, .prose h4, .prose h5 { font-family: 'Poppins', sans-serif; font-weight: 700; margin-bottom: 0.75rem; }
+        .prose p, .prose ul, .prose ol { margin-top: 0; margin-bottom: 1rem; }
+        .prose .main-title { text-align:center; font-size:1.8em; margin-bottom:0.25rem; }
+        .prose .subtitle { text-align:center; font-size:1.4em; margin-top:0; font-weight:600; }
+        .prose .main-divider { border-top:1px solid black; margin:1.5rem 0; }
+        .prose .section-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            padding: 0.5rem 1rem;
+            background-color: #ecfdf5; /* emerald-100 */
+            color: #065f46; /* emerald-800 */
+            border-left: 5px solid #047857; /* emerald-700 */
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .prose .subsection-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #333;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .info-box { background-color: #e0f2fe; border-left: 4px solid #0369a1; padding: 1rem; margin-top: 1rem; border-radius: 0.5rem; }
+        .lampiran-box { border: 1px solid #e5e7eb; padding: 1.25rem; border-radius: 8px; margin-top: 1rem; background-color: #fafafa; }
+        
+        .prose table { width: 100%; border-collapse: collapse; margin-top: 1em; }
+        .prose th, .prose td { border: 1px solid #d1d5db; padding: 0.75rem; text-align: left; }
+        .prose th { background-color: #f9fafb; font-weight: 600; }
+        .prose .info-table td:first-child { font-weight: 600; background-color: #f9fafb; width: 30%; }
+        
+        #gemini-modal-content h1, #gemini-modal-content h2, #gemini-modal-content h3 { font-weight: bold; margin-top: 1.25rem; margin-bottom: 0.5rem; }
+        #gemini-modal-content h1 { font-size: 1.5rem; } #gemini-modal-content h2 { font-size: 1.35rem; } #gemini-modal-content h3 { font-size: 1.2rem; }
+        #gemini-modal-content p { margin-top: 0; margin-bottom: 1rem; line-height: 1.6; }
+        #gemini-modal-content ul, #gemini-modal-content ol { list-style-position: outside; padding-left: 1.5rem; margin-top: 1rem; margin-bottom: 1rem; }
+        #gemini-modal-content li { margin-bottom: 0.5rem; }
+        #gemini-modal-content strong { font-weight: 700; } #gemini-modal-content em { font-style: italic; }
+        #gemini-modal-content a { color: #0e7490; text-decoration: underline; }
+
+        .no-print { display: block; }
+        @media print { .no-print { display: none; } }
+    </style>
+</head>
+<body class="bg-sky-50 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-8 p-8 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg no-print">
+            <h1 class="text-4xl md:text-5xl font-extrabold">Asisten Digital Guru PJOK SMA/SMK/MA</h1>
+            <p class="text-indigo-200 mt-3 text-lg">Merancang Modul Ajar, Kuis, & Ide Coding PJOK jenjang SMA/SMK/MA dengan cepat dan efisien.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div class="lg:col-span-4 no-print">
+                <form id="settingsForm" class="space-y-6 sticky top-8">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-xl font-bold mb-4 border-b pb-2 text-sky-700">Informasi Dasar</h3>
+                        <div class="space-y-4">
+                            <div><label for="nama-penyusun" class="block text-sm font-medium text-gray-700">Nama Guru</label><input type="text" id="nama-penyusun" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500" value="Nama Guru PJOK, S.Pd."></div>
+                            <div><label for="guru-nip" class="block text-sm font-medium text-gray-700">NIP Guru</label><input type="text" id="guru-nip" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500" value="198XXXXX XXXXXX X XXX"></div>
+                            <div><label for="kepsek-nama" class="block text-sm font-medium text-gray-700">Nama Kepala Sekolah</label><input type="text" id="kepsek-nama" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500" value="Nama Kepala Sekolah, M.Pd."></div>
+                            <div><label for="kepsek-nip" class="block text-sm font-medium text-gray-700">NIP Kepala Sekolah</label><input type="text" id="kepsek-nip" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500" value="197XXXXX XXXXXX X XXX"></div>
+                            <div><label for="institusi" class="block text-sm font-medium text-gray-700">Institusi</label><input type="text" id="institusi" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500" value="Nama Sekolah"></div>
+                            <div><label for="lokasi-ttd" class="block text-sm font-medium text-gray-700">Tempat Tanda Tangan</label><input type="text" id="lokasi-ttd" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500" value="Makassar"></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-xl font-bold mb-4 border-b pb-2 text-sky-700">Pengaturan Modul PJOK</h3>
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div><label for="fase" class="block text-sm font-medium text-gray-700">Fase</label><select id="fase" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500"><option value="E" selected>E</option><option value="F">F</option></select></div>
+                                <div><label for="kelas" class="block text-sm font-medium text-gray-700">Kelas</label><select id="kelas" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500"></select></div>
+                            </div>
+                            <div><label for="semester" class="block text-sm font-medium text-gray-700">Semester</label><select id="semester" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500"><option value="Ganjil" selected>Ganjil</option><option value="Genap">Genap</option></select></div>
+                            <div><label for="elemen-cp" class="block text-sm font-medium text-gray-700">Elemen CP</label><select id="elemen-cp" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500"></select></div>
+                            <div><label for="materi-pembelajaran" class="block text-sm font-medium text-gray-700">Materi Pembelajaran</label><select id="materi-pembelajaran" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500"></select></div>
+                            <div><label for="materi-spesifik" class="block text-sm font-medium text-gray-700">Materi Spesifik</label><input type="text" id="materi-spesifik" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500" placeholder="Contoh: passing bawah, guling depan"></div>
+                            <div>
+                                <label for="model-pembelajaran" class="block text-sm font-medium text-gray-700">Model Pembelajaran</label>
+                                <select id="model-pembelajaran" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500"></select>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div><label for="jumlah-pertemuan" class="block text-sm font-medium text-gray-700">Jml. Pertemuan</label><input type="number" id="jumlah-pertemuan" value="2" min="1" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500"></div>
+                                <div><label for="jp-per-pertemuan" class="block text-sm font-medium text-gray-700">JP / Pertemuan</label><input type="number" id="jp-per-pertemuan" value="2" min="1" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500"></div>
+                            </div>
+                            <div><label for="menit-per-jp" class="block text-sm font-medium text-gray-700">Menit per JP</label><input type="number" id="menit-per-jp" value="45" min="1" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500"></div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-sky-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 flex items-center justify-center transition-all duration-200">
+                        <i data-lucide="book-open" class="mr-2"></i>
+                        Buat Modul Ajar
+                    </button>
+                    <div id="loader" class="hidden text-center mt-4">
+                        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-sky-600 mx-auto"></div>
+                        <p class="mt-2 text-gray-600">Asisten sedang merancang...</p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="lg:col-span-8">
+                <div id="outputContainer" class="bg-white p-2 sm:p-4 rounded-xl shadow-lg min-h-screen">
+                    <div id="placeholder" class="flex items-center justify-center h-full">
+                        <div class="text-center text-gray-400">
+                            <i data-lucide="file-text" class="mx-auto h-16 w-16 text-gray-300"></i>
+                            <h3 class="mt-2 text-lg font-medium">Modul Ajar PJOK Anda Akan Tampil di Sini</h3>
+                            <p class="mt-1 text-sm">Lengkapi formulir, dan biarkan Asisten merancang pengalaman belajar.</p>
+                        </div>
+                    </div>
+                    <div id="modulContent" class="prose max-w-none"></div>
+                    <div id="action-buttons-wrapper" class="hidden no-print">
+                        <div class="flex flex-wrap gap-2 my-6 border-t pt-6">
+                            <button id="copy-btn" class="flex items-center bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 text-sm"><i data-lucide="copy" class="mr-2 h-4 w-4"></i>Salin</button>
+                            <button id="back-btn" class="flex items-center bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 text-sm"><i data-lucide="arrow-left" class="mr-2 h-4 w-4"></i>Buat Baru</button>
+                        </div>
+                        <div id="gemini-features" class="mt-4 pt-6 border-t-2 border-dashed border-gray-300">
+                            <h3 class="text-xl font-bold text-sky-800 text-center mb-2">Perkaya Modul dengan Fitur Canggih</h3>
+                            <p class="text-center text-gray-600 mb-6">Gunakan tombol di bawah untuk meminta Asisten Guru membuat konten tambahan.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <button id="gemini-warmup-btn" class="bg-teal-500 text-white font-bold py-3 px-4 rounded-lg hover:bg-teal-600 flex items-center justify-center"><i data-lucide="flame" class="mr-2 h-5 w-5"></i>Ide Pemanasan</button>
+                                <button id="gemini-materi-btn" class="bg-amber-500 text-white font-bold py-3 px-4 rounded-lg hover:bg-amber-600 flex items-center justify-center"><i data-lucide="book-open-check" class="mr-2 h-5 w-5"></i>Materi Ajar Mendalam</button>
+                                <button id="gemini-quiz-btn" class="bg-blue-500 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-600 flex items-center justify-center"><i data-lucide="puzzle" class="mr-2 h-5 w-5"></i>Kuis Interaktif</button>
+                                <button id="gemini-coding-btn" class="bg-gray-700 text-white font-bold py-3 px-4 rounded-lg hover:bg-gray-800 flex items-center justify-center"><i data-lucide="code-2" class="mr-2 h-5 w-5"></i>Ide Coding PJOK</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="gemini-modal" class="fixed inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center p-4 z-50 hidden no-print">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl transform transition-all max-h-[90vh] flex flex-col">
+            <div class="p-5 border-b border-gray-200 flex justify-between items-center">
+                <h2 id="gemini-modal-title" class="text-xl font-bold text-gray-800">Bantuan Asisten Guru</h2>
+                <button id="gemini-modal-close" class="text-gray-400 hover:text-gray-600"><i data-lucide="x" class="h-6 w-6"></i></button>
+            </div>
+            <div id="gemini-modal-content" class="p-6 overflow-y-auto prose max-w-none"></div>
+            <div class="p-4 bg-gray-50 border-t border-gray-200 rounded-b-2xl"><button id="gemini-modal-copy" class="w-full bg-sky-600 text-white font-bold py-2.5 px-4 rounded-lg hover:bg-sky-700 flex items-center justify-center">Salin Teks</button></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            
+            // --- DATABASE PJOK SMA (INTI APLIKASI) ---
+            const capaianPerElemen = {
+                'Terampil Bergerak': {
+                    E: "Peserta didik merancang, menerapkan, dan menghaluskan keterampilan gerak spesifik di dalam berbagai situasi gerak yang menantang. Peserta didik menciptakan dan mengembangkan strategi gerak untuk mendapatkan keberhasilan capaian keterampilan gerak melintasi berbagai situasi gerak yang menantang. Peserta didik menerapkan konsep gerak di dalam situasi gerak baru yang menantang dan menganalisis dampak tiap konsep pada capaian keterampilan gerak.",
+                    F: "Peserta didik merancang, menerapkan, menghaluskan dan mengevaluasi keterampilan gerak spesifik di dalam berbagai situasi gerak yang menantang untuk meningkatkan kinerja gerak. Peserta didik menciptakan, mengembangkan, dan mengevaluasi strategi gerak untuk mendapatkan keberhasilan capaian keterampilan gerak melintasi berbagai situasi gerak yang menantang. Peserta didik menerapkan konsep gerak di dalam situasi gerak baru yang menantang dan mengevaluasi dampak tiap konsep pada capaian keterampilan gerak."
+                },
+                'Belajar melalui Gerak': {
+                    E: "Peserta didik mentransfer dan mengadaptasi strategi gerak yang telah dikuasai dalam situasi gerak yang berbeda. Peserta didik memeragakan fair play dan mengevaluasi pengaruh perilaku etis terhadap capaian aktivitas jasmani bagi individu dan kelompok. Peserta didik merencanakan, menerapkan, dan menyempurnakan strategi pengambilan keputusan dalam kerja tim yang mempertunjukkan keterampilan kepemimpinan dan kolaborasi.",
+                    F: "Peserta didik mengadaptasi dan mengevaluasi strategi gerak yang telah dikuasai dalam situasi gerak baru yang menantang. Peserta didik mengevaluasi fair play dan merefleksikan pengaruh perilaku etis terhadap capaian aktivitas jasmani bagi individu dan kelompok. Peserta didik merancang dan mengevaluasi strategi pengambilan keputusan dalam kerja tim yang mempertunjukkan keterampilan kepemimpinan dan kolaborasi."
+                },
+                'Bergaya Hidup Aktif': {
+                    E: "Peserta didik berpartisipasi dalam aktivitas kebugaran dan menginvestigasi dampak partisipasi yang teratur terhadap kesehatan. Peserta didik berpartisipasi dalam aktivitas kebugaran di luar ruang dan/atau lingkungan alam, dan merancang strategi peningkatan pemanfaatannya. Peserta didik merancang strategi peningkatan aktivitas kebugaran untuk kesehatan.",
+                    F: "Peserta didik berpartisipasi dalam aktivitas kebugaran dan mengevaluasi dampak partisipasi yang teratur terhadap kesehatan. Peserta didik berpartisipasi dalam aktivitas kebugaran di luar ruang dan/atau lingkungan alam, dan mengevaluasi strategi peningkatan pemanfaatannya. Peserta didik mengevaluasi efektivitas strategi peningkatan aktivitas kebugaran untuk kesehatan."
+                },
+                'Memilih Hidup yang Menyehatkan': {
+                    E: "Peserta didik mengevaluasi risiko kesehatan akibat gaya hidup dan tindakan pencegahan melalui aktivitas jasmani serta mempromosikannya menggunakan berbagai media. Peserta didik mengevaluasi pilihan makanan sehat berdasarkan analisis kandungan gizi sesuai kebutuhan aktivitas jasmani.",
+                    F: "Peserta didik mengadvokasi gaya hidup aktif dan sehat melalui aktivitas jasmani menggunakan berbagai media, mengadvokasi makanan sehat dan bergizi seimbang kepada orang lain sesuai kebutuhan aktivitas jasmaninya, dan mempraktikkan tindakan Resusitasi Jantung-Paru (RJP) sesuai Prosedur Operasional Standar (POS) sebagai upaya penyelamatan hidup."
+                }
+            };
+            const elemenList = [ 'Terampil Bergerak', 'Belajar melalui Gerak', 'Bergaya Hidup Aktif', 'Memilih Hidup yang Menyehatkan' ];
+            const materiByKelas = {
+                '10': {
+                    'invasi-basket-10': { text: 'Permainan Invasi (Bola Basket)', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'melempar & menangkap bola, dribbling, shooting' },
+                    'invasi-sepakbola-10': { text: 'Permainan Invasi (Sepak Bola)', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'passing, stopping, dribbling, shooting' },
+                    'net-voli-10': { text: 'Permainan Net (Bola Voli)', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'passing bawah, passing atas, spike, block' },
+                    'net-bulutangkis-10': { text: 'Permainan Net (Bulu Tangkis)', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'pukulan smash, pukulan lob, variasi pukulan' },
+                    'atletik-10': { text: 'Aktivitas Atletik (Lari, Lompat, Lempar)', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'sprint, lompat jauh, tolak peluru' },
+                    'senam-lantai-10': { text: 'Aktivitas Senam (Senam Lantai)', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'guling depan, guling belakang, sikap lilin' },
+                    'gerak-berirama-10': { text: 'Aktivitas Gerak Berirama', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'kombinasi gerak langkah & ayunan' },
+                    'kebugaran-10': { text: 'Aktivitas Kebugaran Jasmani', elemenTerkait: 'Bergaya Hidup Aktif', contohSpesifik: 'latihan sirkuit (circuit training)' }
+                },
+                '11': {
+                    'invasi-basket-11': { text: 'Permainan Invasi (Bola Basket)', elemenTerkait: 'Belajar melalui Gerak', contohSpesifik: 'strategi penyerangan dan pertahanan dasar' },
+                    'net-voli-11': { text: 'Permainan Net (Bola Voli)', elemenTerkait: 'Belajar melalui Gerak', contohSpesifik: 'formasi permainan, rotasi pemain' },
+                    'lapangan-sofbol-11': { text: 'Permainan Lapangan (Sofbol)', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'melempar, menangkap, memukul bola' },
+                    'beladiri-silat-11': { text: 'Aktivitas Bela Diri (Pencak Silat)', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'kuda-kuda, pukulan, tendangan, tangkisan' },
+                    'senam-alat-11': { text: 'Aktivitas Senam (Menggunakan Alat)', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'lompat kangkang, lompat jongkok' },
+                    'renang-11': { text: 'Aktivitas Akuatik (Renang)', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'renang gaya bebas, gaya dada' },
+                    'kebugaran-program-11': { text: 'Penyusunan Program Latihan Kebugaran', elemenTerkait: 'Bergaya Hidup Aktif', contohSpesifik: 'prinsip FITT (Frequency, Intensity, Time, Type)' },
+                    'pencegahan-hiv-11': { text: 'Pencegahan HIV/AIDS & PMS', elemenTerkait: 'Memilih Hidup yang Menyehatkan', contohSpesifik: 'analisis risiko, cara pencegahan' }
+                },
+                '12': {
+                    'invasi-evaluasi-12': { text: 'Evaluasi Taktik Permainan Invasi', elemenTerkait: 'Belajar melalui Gerak', contohSpesifik: 'analisis video pertandingan, evaluasi pola serangan' },
+                    'net-evaluasi-12': { text: 'Evaluasi Taktik Permainan Net', elemenTerkait: 'Belajar melalui Gerak', contohSpesifik: 'evaluasi efektivitas servis dan spike' },
+                    'atletik-evaluasi-12': { text: 'Evaluasi Keterampilan Atletik', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'analisis gerak lari jarak pendek, lompat tinggi' },
+                    'beladiri-evaluasi-12': { text: 'Evaluasi Rangkaian Gerak Bela Diri', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'evaluasi jurus tunggal pencak silat' },
+                    'senam-evaluasi-12': { text: 'Evaluasi Rangkaian Senam Lantai', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'evaluasi rangkaian guling, handstand, meroda' },
+                    'renang-evaluasi-12': { text: 'Evaluasi Keterampilan Renang', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'evaluasi efisiensi renang gaya punggung' },
+                    'kebugaran-evaluasi-12': { text: 'Evaluasi Program Latihan Kebugaran', elemenTerkait: 'Bergaya Hidup Aktif', contohSpesifik: 'evaluasi hasil tes kebugaran (pre & post test)' },
+                    'rjp-12': { text: 'Pertolongan Pertama (RJP)', elemenTerkait: 'Memilih Hidup yang Menyehatkan', contohSpesifik: 'praktik Resusitasi Jantung Paru (RJP)' }
+                }
+            };
+            const modelPembelajaranList = [ "Direct Instruction", "Tactical Games Model", "Sport Education Model (SEM)", "Cooperative Learning", "Project-Based Learning (PjBL)", "Problem-Based Learning (PBL)", "Inquiry Learning", "Discovery Learning" ];
+            const profilLulusanDatabase = {
+                base: ['Keimanan', 'Kemandirian', 'Kesehatan'],
+                desc: {
+                    'Keimanan': 'Terintegrasi melalui kegiatan berdoa sebelum dan sesudah pelajaran serta menumbuhkan rasa syukur atas kesehatan tubuh.',
+                    'Kewargaan': 'Dikembangkan melalui sportivitas, kepatuhan pada aturan main, menghargai teman maupun lawan, serta memahami peran aktivitas fisik dalam membangun karakter bangsa.',
+                    'Penalaran Kritis': 'Diasah saat siswa menganalisis taktik, mengevaluasi gerakan, dan memecahkan masalah dalam situasi permainan yang kompleks.',
+                    'Kreativitas': 'Didorong saat siswa merancang variasi latihan, menciptakan strategi permainan baru, atau mengembangkan koreografi gerak berirama.',
+                    'Kolaborasi': 'Dibangun melalui kerja sama tim, komunikasi efektif untuk mencapai tujuan bersama, dan memberikan umpan balik konstruktif kepada rekan.',
+                    'Kemandirian': 'Tumbuh saat siswa mengambil inisiatif untuk berlatih, menyusun program latihan pribadi, dan bertanggung jawab atas kemajuan belajarnya.',
+                    'Kesehatan': 'Menjadi fokus utama dengan memahami dampak aktivitas fisik terhadap kesehatan, menyusun program kebugaran, dan mengadvokasi gaya hidup sehat.',
+                    'Komunikasi': 'Dilatih secara verbal dan non-verbal saat berinteraksi dengan tim, menyampaikan strategi, dan mempresentasikan hasil analisis atau proyek.'
+                },
+                byElemen: {
+                    'Terampil Bergerak': ['Penalaran Kritis', 'Kreativitas'],
+                    'Belajar melalui Gerak': ['Penalaran Kritis', 'Kolaborasi', 'Komunikasi', 'Kewargaan'],
+                    'Bergaya Hidup Aktif': ['Kemandirian', 'Penalaran Kritis'],
+                    'Memilih Hidup yang Menyehatkan': ['Penalaran Kritis', 'Komunikasi', 'Kewargaan']
+                }
+            };
+            const kelasByFase = { E: [10], F: [11, 12] };
+
+            const sintaksDatabase = {
+                default: {
+                    'Direct Instruction': [ { phase: 'Fase 1: Menyampaikan Tujuan & Mempersiapkan Siswa', activity: 'Guru menjelaskan tujuan pembelajaran, capaian, dan melakukan apersepsi.', experience: 'memahami' }, { phase: 'Fase 2: Demonstrasi (I Do)', activity: 'Guru mendemonstrasikan keterampilan {materi_spesifik} secara benar, jelas, dan bertahap.', experience: 'memahami' }, { phase: 'Fase 3: Latihan Terbimbing (We Do)', activity: 'Siswa meniru gerakan dengan bimbingan dan umpan balik korektif dari guru.', experience: 'mengaplikasi' }, { phase: 'Fase 4: Latihan Mandiri & Penerapan (You Do)', activity: 'Siswa berlatih mandiri atau berpasangan untuk memantapkan gerakan dalam situasi yang dimodifikasi.', experience: 'mengaplikasi' }, { phase: 'Fase 5: Evaluasi & Refleksi', activity: 'Guru mengevaluasi penguasaan keterampilan dan mengajak siswa merefleksikan proses belajar.', experience: 'merefleksi' } ],
+                    'Tactical Games Model': [ { phase: 'Fase 1: Permainan Awal (Game Form)', activity: 'Siswa memainkan permainan yang dimodifikasi terkait {materi_spesifik} untuk mengidentifikasi masalah taktis.', experience: 'mengaplikasi' }, { phase: 'Fase 2: Kesadaran Taktis (Tactical Awareness)', activity: 'Guru mengajukan pertanyaan kunci untuk membangun pemahaman taktis: "Kapan waktu terbaik untuk...?", "Di mana posisi yang paling menguntungkan?"', experience: 'memahami' }, { phase: 'Fase 3: Eksekusi Keterampilan (Skill Execution)', activity: 'Siswa berlatih keterampilan teknis ({materi_spesifik}) yang dibutuhkan untuk memecahkan masalah taktis yang telah diidentifikasi.', experience: 'mengaplikasi' }, { phase: 'Fase 4: Permainan Akhir (Modified Game)', activity: 'Siswa kembali memainkan permainan dengan menerapkan pemahaman taktis dan keterampilan yang baru dilatih.', experience: 'mengaplikasi' }, { phase: 'Fase 5: Refleksi Kinerja', activity: 'Setiap tim merefleksikan efektivitas strategi yang digunakan dan merencanakan perbaikan.', experience: 'merefleksi' } ],
+                    'Cooperative Learning': [ { phase: 'Fase 1: Penyampaian Tujuan & Motivasi', activity: 'Guru menjelaskan tujuan pembelajaran, tugas kelompok, dan pentingnya kerja sama tim.', experience: 'memahami' }, { phase: 'Fase 2: Pembentukan Kelompok & Peran', activity: 'Siswa dibagi menjadi kelompok heterogen dengan peran yang jelas (misal: pengamat, pemateri, pencatat).', experience: 'mengaplikasi' }, { phase: 'Fase 3: Kerja Kelompok (Positive Interdependence)', activity: 'Kelompok diberi tugas/tantangan gerak terkait {materi_spesifik} yang hanya bisa diselesaikan dengan kerja sama.', experience: 'mengaplikasi' }, { phase: 'Fase 4: Presentasi/Kompetisi Antar Kelompok', activity: 'Setiap kelompok menampilkan hasil kerja atau berkompetisi secara sportif.', experience: 'mengaplikasi' }, { phase: 'Fase 5: Evaluasi Proses & Hasil Kelompok', activity: 'Guru bersama siswa mengevaluasi proses kerja sama (keterampilan sosial) dan hasil yang dicapai setiap kelompok.', experience: 'merefleksi' } ],
+                    'Project-Based Learning (PjBL)': [ { phase: 'Fase 1: Pertanyaan Mendasar (Driving Question)', activity: 'Guru mengajukan pertanyaan pemicu: "Bagaimana kita bisa merancang sebuah kampanye/video tutorial/acara untuk mempromosikan {materi_spesifik}?"', experience: 'memahami' }, { phase: 'Fase 2: Merancang Proyek', activity: 'Siswa secara berkelompok menyusun proposal proyek: tujuan, target audiens, langkah kerja, dan jadwal.', experience: 'mengaplikasi' }, { phase: 'Fase 3: Melaksanakan Proyek & Monitoring', activity: 'Siswa melaksanakan proyek (riset, latihan, pembuatan produk), guru memfasilitasi dan memonitor kemajuan.', experience: 'mengaplikasi' }, { phase: 'Fase 4: Menguji & Mempresentasikan Hasil', activity: 'Setiap kelompok mempresentasikan produk akhir proyeknya dan menerima umpan balik dari audiens.', experience: 'mengaplikasi' }, { phase: 'Fase 5: Evaluasi & Refleksi Pengalaman', activity: 'Siswa dan guru merefleksikan proses proyek, tantangan, dan pembelajaran yang didapat.', experience: 'merefleksi' } ],
+                    'Sport Education Model (SEM)': [ { phase: 'Fase 1: Pengenalan Musim Kompetisi', activity: 'Guru memperkenalkan tema musim kompetisi (misal: "Liga Bola Voli Antar Tim") dan durasinya.', experience: 'memahami' }, { phase: 'Fase 2: Afiliasi Tim & Peran', activity: 'Siswa dibagi menjadi tim tetap, menentukan nama, logo, dan menunjuk peran (kapten, pelatih, wasit, jurnalis).', experience: 'mengaplikasi' }, { phase: 'Fase 3: Sesi Latihan Tim', activity: 'Tim berlatih keterampilan {materi_spesifik} dan strategi permainan di bawah arahan "pelatih" dari anggota tim.', experience: 'mengaplikasi' }, { phase: 'Fase 4: Pertandingan Resmi (Liga/Turnamen)', activity: 'Tim saling berkompetisi dalam format liga. "Wasit" dan "jurnalis" dari tim yang tidak bermain menjalankan perannya.', experience: 'mengaplikasi' }, { phase: 'Fase 5: Puncak Musim & Selebrasi', activity: 'Musim diakhiri dengan sebuah festival, pengumuman juara, dan pemberian penghargaan (tim terbaik, pemain paling sportif, jurnalis terbaik, dll).', experience: 'merefleksi' } ],
+                    'Default': [ { phase: 'Fase 1: Pemahaman Konsep', activity: 'Guru menjelaskan dan mendemonstrasikan konsep dasar dari {materi_spesifik}.', experience: 'memahami' }, { phase: 'Fase 2: Praktik Terbimbing', activity: 'Siswa mencoba mempraktikkan {materi_spesifik} dalam sebuah aktivitas atau permainan dengan panduan guru.', experience: 'mengaplikasi' }, { phase: 'Fase 3: Aplikasi & Eksplorasi', activity: 'Siswa menerapkan keterampilan dalam situasi yang lebih kompleks atau melakukan eksplorasi variasi gerak.', experience: 'mengaplikasi' }, { phase: 'Fase 4: Refleksi Pembelajaran', activity: 'Siswa diajak untuk merefleksikan apa yang telah dipelajari, kesulitan, dan perasaan mereka selama aktivitas.', experience: 'merefleksi' } ]
+                }
+            };
+            
+            const copyStyles = `
+                @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+                body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333; }
+                h1, h2, h3, h4, h5 { font-family: 'Poppins', sans-serif; font-weight: 700; margin-bottom: 0.75rem; color: #111827; }
+                p, ul, ol { margin-top: 0; margin-bottom: 1rem; }
+                .main-title { text-align:center; font-size:1.8em; margin-bottom:0.25rem; }
+                .subtitle { text-align:center; font-size:1.4em; margin-top:0; font-weight:600; }
+                .main-divider { border-top:1px solid black; margin:1.5rem 0; }
+                .section-title { font-size: 1.5rem; font-weight: 800; padding: 0.5rem 1rem; background-color: #ecfdf5; color: #065f46; border-left: 5px solid #047857; margin-top: 2.5rem; margin-bottom: 1.5rem; }
+                .subsection-title { font-size: 1.15rem; font-weight: 700; color: #333; margin-top: 2rem; margin-bottom: 1rem; padding-bottom: 0.25rem; border-bottom: 1px solid #e5e7eb; }
+                .info-box { background-color: #e0f2fe; border-left: 4px solid #0369a1; padding: 1rem; margin-top: 1rem; border-radius: 0.5rem; }
+                .lampiran-box { border: 1px solid #e5e7eb; padding: 1.25rem; border-radius: 8px; margin-top: 1rem; background-color: #fafafa; }
+                table { width: 100%; border-collapse: collapse; margin-top: 1em; page-break-inside: avoid; }
+                th, td { border: 1px solid #d1d5db; padding: 0.75rem; text-align: left; vertical-align: top; }
+                th { background-color: #f9fafb; font-weight: 600; }
+                .info-table td:first-child { font-weight: 600; background-color: #f9fafb; width: 30%; }
+                ul, ol { list-style-position: outside; padding-left: 1.5rem; }
+                li { margin-bottom: 0.5rem; }
+                strong, b { font-weight: 700; }
+                em, i { font-style: italic; }
+                a { color: #0e7490; text-decoration: underline; }
+                h1, .h1 { font-size: 1.8rem; } h2, .h2 { font-size: 1.5rem; } h3, .h3 { font-size: 1.2rem; }
+            `;
+
+            const ui = {
+                form: document.getElementById('settingsForm'),
+                fase: document.getElementById('fase'),
+                kelas: document.getElementById('kelas'),
+                semester: document.getElementById('semester'),
+                elemenCp: document.getElementById('elemen-cp'),
+                materiPembelajaran: document.getElementById('materi-pembelajaran'),
+                modelPembelajaran: document.getElementById('model-pembelajaran'),
+                output: { container: document.getElementById('outputContainer'), content: document.getElementById('modulContent'), placeholder: document.getElementById('placeholder'), loader: document.getElementById('loader'), actionButtonsWrapper: document.getElementById('action-buttons-wrapper'), copyBtn: document.getElementById('copy-btn'), backBtn: document.getElementById('back-btn') },
+                gemini: { featuresSection: document.getElementById('gemini-features'), modal: document.getElementById('gemini-modal'), modalTitle: document.getElementById('gemini-modal-title'), modalContent: document.getElementById('gemini-modal-content'), modalClose: document.getElementById('gemini-modal-close'), modalCopy: document.getElementById('gemini-modal-copy'), warmupBtn: document.getElementById('gemini-warmup-btn'), materiBtn: document.getElementById('gemini-materi-btn'), quizBtn: document.getElementById('gemini-quiz-btn'), codingBtn: document.getElementById('gemini-coding-btn') }
+            };
+
+            function setupInitialOptions() {
+                ui.elemenCp.innerHTML = '';
+                elemenList.forEach(el => {
+                    const option = document.createElement('option');
+                    option.value = el;
+                    option.textContent = el;
+                    ui.elemenCp.appendChild(option);
+                });
+
+                ui.modelPembelajaran.innerHTML = '';
+                modelPembelajaranList.forEach(model => {
+                    const option = document.createElement('option');
+                    option.value = model;
+                    option.textContent = model;
+                    ui.modelPembelajaran.appendChild(option);
+                });
+            }
+
+            function populateKelas() {
+                const fase = ui.fase.value;
+                const kelasUntukFase = kelasByFase[fase];
+                ui.kelas.innerHTML = '';
+                kelasUntukFase.forEach(k => {
+                    const option = document.createElement('option');
+                    option.value = k;
+                    option.textContent = `${k}`;
+                    ui.kelas.appendChild(option);
+                });
+                populateMateri();
+            }
+
+            function populateMateri() {
+                const kelas = ui.kelas.value;
+                const materiUntukKelas = materiByKelas[kelas];
+                ui.materiPembelajaran.innerHTML = '';
+                if (materiUntukKelas) {
+                    for (const key in materiUntukKelas) {
+                        const option = document.createElement('option');
+                        option.value = key;
+                        option.textContent = materiUntukKelas[key].text;
+                        ui.materiPembelajaran.appendChild(option);
+                    }
+                }
+                updateElemenFromMateri();
+            }
+
+            function updateElemenFromMateri() {
+                const kelas = ui.kelas.value;
+                const materiKey = ui.materiPembelajaran.value;
+                const materiSpesifikInput = document.getElementById('materi-spesifik');
+
+                if (materiByKelas[kelas] && materiByKelas[kelas][materiKey]) {
+                    const materiData = materiByKelas[kelas][materiKey];
+                    const elemen = materiData.elemenTerkait;
+                    if (elemen) ui.elemenCp.value = elemen;
+                    
+                    materiSpesifikInput.placeholder = materiData.contohSpesifik ? `Contoh: ${materiData.contohSpesifik}` : 'Isi materi spesifik di sini...';
+                    materiSpesifikInput.value = ''; // Clear previous value
+                }
+            }
+
+            function getFormInputs() {
+                return {
+                    namaPenyusun: document.getElementById('nama-penyusun').value || '________________',
+                    guruNip: document.getElementById('guru-nip').value || '________________',
+                    kepsekNama: document.getElementById('kepsek-nama').value || '________________',
+                    kepsekNip: document.getElementById('kepsek-nip').value || '________________',
+                    institusi: document.getElementById('institusi').value || '________________',
+                    lokasiTtd: document.getElementById('lokasi-ttd').value || '___________',
+                    fase: ui.fase.value,
+                    kelas: ui.kelas.value,
+                    semester: ui.semester.value,
+                    elemenCp: ui.elemenCp.value,
+                    materiKey: ui.materiPembelajaran.value,
+                    materiJudul: ui.materiPembelajaran.options[ui.materiPembelajaran.selectedIndex].text,
+                    materiSpesifik: document.getElementById('materi-spesifik').value,
+                    modelPembelajaran: ui.modelPembelajaran.value,
+                    alokasiWaktu: {
+                        jumlahPertemuan: parseInt(document.getElementById('jumlah-pertemuan').value, 10) || 1,
+                        jpPerPertemuan: parseInt(document.getElementById('jp-per-pertemuan').value, 10) || 2,
+                        menitPerJP: parseInt(document.getElementById('menit-per-jp').value, 10) || 45,
+                    },
+                };
+            }
+
+            function handleGenerate(event) {
+                event.preventDefault();
+                ui.output.placeholder.classList.add('hidden');
+                ui.output.loader.classList.remove('hidden');
+                ui.output.content.innerHTML = '';
+                ui.output.actionButtonsWrapper.classList.add('hidden');
+                setTimeout(generateModulAjar, 500);
+            }
+            
+            function generateModulAjar() {
+                const inputs = getFormInputs();
+                ui.output.content.innerHTML = buildModulHtml(inputs);
+                ui.output.loader.classList.add('hidden');
+                ui.output.actionButtonsWrapper.classList.remove('hidden');
+                ui.output.placeholder.classList.add('hidden');
+                ui.output.container.scrollIntoView({ behavior: 'smooth' });
+                lucide.createIcons();
+            }
+
+            // --- FUNGSI-FUNGSI PEMBANGUN KONTEN MODUL ---
+
+            function getStyledLabel(type, text) {
+                const baseStyle = `font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 9999px; margin-left: 0.5rem; vertical-align: middle; display: inline-block; margin-top: 0.25rem; border: 1px solid transparent;`;
+                const styles = {
+                    'joyful': 'background-color: #fef9c3; color: #713f12;', // yellow
+                    'meaningful': 'background-color: #dcfce7; color: #14532d;', // green
+                    'mindful': 'background-color: #e0e7ff; color: #312e81;', // indigo
+                    'memahami': 'background-color: #cffafe; color: #155e75; border-color: #0e7490;', // cyan
+                    'mengaplikasi': 'background-color: #dcfce7; color: #166534; border-color: #16a34a;', // green
+                    'merefleksi': 'background-color: #ede9fe; color: #4c1d95; border-color: #5b21b6;', // violet
+                };
+                const finalStyle = baseStyle + (styles[type] || '');
+                return `<span style="${finalStyle}">${text}</span>`;
+            }
+
+            function getLearningLabel(langkah) {
+                const lowerLangkah = langkah.toLowerCase();
+                const joyfulKeywords = ['permainan', 'bernyanyi', 'menampilkan', 'bermain', 'ice breaking', 'berkelompok', 'presentasi', 'kompetisi', 'yel-yel', 'festival', 'selebrasi'];
+                const meaningfulKeywords = ['analisis', 'menganalisis', 'evaluasi', 'diskusi', 'refleksi', 'apersepsi', 'menyimpulkan', 'umpan balik', 'strategi'];
+                const mindfulKeywords = ['praktik', 'latihan', 'mengamati', 'menirukan', 'mencatat', 'mengidentifikasi', 'menyampaikan tujuan', 'demonstrasi', 'drill', 'eksplorasi'];
+
+                if (joyfulKeywords.some(keyword => lowerLangkah.includes(keyword))) return getStyledLabel('joyful', 'Joyful');
+                if (meaningfulKeywords.some(keyword => lowerLangkah.includes(keyword))) return getStyledLabel('meaningful', 'Meaningful');
+                if (mindfulKeywords.some(keyword => lowerLangkah.includes(keyword))) return getStyledLabel('mindful', 'Mindful');
+                return '';
+            }
+
+            function getPengalamanLabel(type) {
+                const labelMap = { 'memahami': 'Memahami', 'mengaplikasi': 'Mengaplikasi', 'merefleksi': 'Merefleksi' };
+                return getStyledLabel(type, labelMap[type] || '');
+            }
+
+            function buildModulHtml(d) {
+                const alokasi = d.alokasiWaktu;
+                const totalJP = alokasi.jumlahPertemuan * alokasi.jpPerPertemuan;
+                const alokasiWaktuText = `${totalJP} JP (${alokasi.jumlahPertemuan} Pertemuan @ ${alokasi.jpPerPertemuan} JP x ${alokasi.menitPerJP} Menit)`;
+                const capaianPembelajaran = capaianPerElemen[d.elemenCp] ? capaianPerElemen[d.elemenCp][d.fase] : "Capaian tidak ditemukan.";
+                const materiJudulSingkat = d.materiJudul.replace(/Aktivitas.*?:\s*|Permainan\s*|Kesehatan:\s*|Pembelajaran\s*|Evaluasi\s*/, '').replace(/\s*\(.*\)/, '').trim();
+                const placeholderMateri = d.materiSpesifik || materiJudulSingkat;
+                const tujuanPembelajaran = `Peserta didik dapat merancang, menerapkan, dan mengevaluasi keterampilan serta strategi gerak terkait ${placeholderMateri.toLowerCase()} dalam berbagai situasi yang relevan sesuai dengan model pembelajaran yang dipilih.`;
+                const pemahamanBermakna = `Dengan menguasai ${placeholderMateri.toLowerCase()}, saya dapat meningkatkan performa, memahami taktik, dan menerapkan nilai-nilai sportif dalam aktivitas jasmani, yang berguna untuk kesehatan dan kehidupan sosial.`;
+                const pertanyaanPemantik = `<ul><li>Apa tantangan terbesar dalam menguasai ${placeholderMateri.toLowerCase()}?</li><li>Bagaimana ${placeholderMateri.toLowerCase()} dapat membantu kita mencapai keunggulan dalam sebuah permainan atau aktivitas?</li><li>Strategi apa yang bisa kita kembangkan menggunakan keterampilan ${placeholderMateri.toLowerCase()}?</li></ul>`;
+
+                return `
+                    <h1 class="main-title">MODUL AJAR PENDIDIKAN JASMANI, OLAHRAGA, DAN KESEHATAN (PJOK)</h1>
+                    <h2 class="subtitle">${d.materiJudul.toUpperCase()}</h2>
+                    <hr class="main-divider">
+                    
+                    <h2 class="section-title">A. INFORMASI UMUM</h2>
+                    <table class="info-table"><tbody>
+                        <tr><td>Nama Penyusun</td><td>: ${d.namaPenyusun}</td></tr>
+                        <tr><td>Nama Sekolah</td><td>: ${d.institusi}</td></tr>
+                        <tr><td>Tahun Pelajaran</td><td>: ${new Date().getFullYear()}/${new Date().getFullYear() + 1}</td></tr>
+                        <tr><td>Fase / Kelas</td><td>: ${d.fase} / ${d.kelas}</td></tr>
+                        <tr><td>Elemen</td><td>: ${d.elemenCp}</td></tr>
+                        <tr><td>Capaian Pembelajaran</td><td>: ${capaianPembelajaran}</td></tr>
+                        <tr><td>Alokasi Waktu</td><td>: ${alokasiWaktuText}</td></tr>
+                    </tbody></table>
+
+                    <h2 class="section-title">B. KOMPONEN INTI</h2>
+                    <h3 class="subsection-title">1. Tujuan Pembelajaran</h3>
+                    <p>${tujuanPembelajaran}</p>
+                    
+                    <h3 class="subsection-title">2. Pemahaman Bermakna & Pertanyaan Pemantik</h3>
+                    <p><strong>Pemahaman Bermakna:</strong> ${pemahamanBermakna}</p>
+                    <p><strong>Pertanyaan Pemantik:</strong></p>${pertanyaanPemantik}
+
+                    ${buildDelapanDimensi(d)}
+
+                    <h2 class="section-title">C. KEGIATAN PEMBELAJARAN</h2>
+                    ${buildKerangkaPembelajaran(d)}
+                    <h3 class="subsection-title">2. Rincian Kegiatan Pembelajaran</h3>
+                    ${buildLangkahPembelajaran(d)}
+                    
+                    <h2 class="section-title">D. ASESMEN / PENILAIAN</h2>
+                    ${buildAsesmenSection(d)}
+
+                    <h2 class="section-title">E. PENGAYAAN DAN REMEDIAL</h2>
+                    ${buildPengayaanRemedial(d)}
+
+                    <h2 class="section-title">F. REFLEKSI GURU DAN PESERTA DIDIK</h2>
+                    ${buildRefleksi(d)}
+
+                    <h2 class="section-title">G. LAMPIRAN</h2>
+                    ${buildLkpd(d)}
+                    ${buildAsesmenOtentik(d)}
+                    ${buildCodingPJOKLampiran(d)}
+
+                    <h2 class="section-title">H. GLOSARIUM & DAFTAR PUSTAKA</h2>
+                    ${buildGlosarium(d)}
+                    ${buildDaftarPustaka(d)}
+
+                    <table style="width: 100%; border: none; margin-top: 60px; page-break-inside: avoid;"><tbody><tr>
+                        <td style="width: 50%; text-align: center; border: none; vertical-align: top;">
+                            Mengetahui,<br>Kepala Sekolah
+                            <div style="height: 80px;"></div>
+                            <strong style="text-decoration: underline;">${d.kepsekNama}</strong><br>
+                            NIP. ${d.kepsekNip}
+                        </td>
+                        <td style="width: 50%; text-align: center; border: none; vertical-align: top;">
+                            ${d.lokasiTtd}, ${new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}<br>
+                            Guru Mata Pelajaran
+                            <div style="height: 80px;"></div>
+                            <strong style="text-decoration: underline;">${d.namaPenyusun}</strong><br>
+                            NIP. ${d.guruNip}
+                        </td>
+                    </tr></tbody></table>
+                `;
+            }
+
+            function buildDelapanDimensi(d) {
+                const { elemenCp, modelPembelajaran } = d;
+                const allDimensions = profilLulusanDatabase.desc;
+                let relevantDimensions = new Set(profilLulusanDatabase.base);
+                if (profilLulusanDatabase.byElemen[elemenCp]) {
+                    profilLulusanDatabase.byElemen[elemenCp].forEach(dim => relevantDimensions.add(dim));
+                }
+                const modelMap = { 'Project-Based Learning (PjBL)': ['Kolaborasi', 'Penalaran Kritis', 'Kreativitas'], 'Problem-Based Learning (PBL)': ['Penalaran Kritis', 'Kolaborasi'], 'Cooperative Learning': ['Kolaborasi', 'Komunikasi'], 'Tactical Games Model': ['Penalaran Kritis', 'Kolaborasi'], 'Sport Education Model (SEM)': ['Kolaborasi', 'Kewargaan', 'Komunikasi'] };
+                if (modelMap[modelPembelajaran]) {
+                    modelMap[modelPembelajaran].forEach(dim => relevantDimensions.add(dim));
+                }
+
+                let html = `<h3 class="subsection-title">3. 8 Dimensi Profil Lulusan Pembelajaran Mendalam</h3>
+                    <div class="info-box">
+                        <p>Melalui tujuan, materi, dan model pembelajaran yang dipilih, pembelajaran ini secara khusus berfokus pada pengembangan dimensi-dimensi berikut:</p>
+                        <ul>`;
+                Array.from(relevantDimensions).sort().forEach(dim => {
+                    html += `<li><strong>${dim}:</strong> ${allDimensions[dim]}</li>`;
+                });
+                html += `</ul></div>`;
+                return html;
+            }
+
+            function buildKerangkaPembelajaran(d) {
+                const kemitraanDesc = 'Melibatkan orang tua dalam memantau aktivitas fisik siswa di luar jam sekolah dan berkolaborasi dengan komunitas/klub olahraga lokal untuk pengenalan atau sesi latihan khusus.';
+                const teknologiDesc = 'Memanfaatkan aplikasi analisis video untuk umpan balik gerak, papan taktik digital untuk merancang strategi, dan platform online untuk berbagi materi atau portofolio proyek siswa.';
+                const lingkunganDesc = 'Menciptakan lingkungan belajar yang kompetitif namun tetap suportif, di mana siswa merasa aman untuk mengambil risiko, mencoba strategi baru, dan belajar dari kegagalan.';
+                const praktikPedagogisDesc = `Model <strong>${d.modelPembelajaran}</strong> dipilih untuk mendorong siswa berpikir kritis, memecahkan masalah secara kolaboratif, dan menerapkan keterampilan dalam konteks yang otentik dan menantang.`;
+
+                return `
+                    <h3 class="subsection-title">1. Kerangka Pembelajaran Mendalam</h3>
+                    <p>Agar pembelajaran berjalan efektif, kerangka pembelajaran ini mencakup empat komponen utama:</p>
+                    <ol>
+                        <li><strong>Praktik Pedagogis:</strong> ${praktikPedagogisDesc}</li>
+                        <li><strong>Kemitraan Pembelajaran:</strong> ${kemitraanDesc}</li>
+                        <li><strong>Lingkungan Pembelajaran:</strong> ${lingkunganDesc}</li>
+                        <li><strong>Pemanfaatan Teknologi Digital:</strong> ${teknologiDesc}</li>
+                    </ol>
+                `;
+            }
+
+            function buildLangkahPembelajaran(d) {
+                let allMeetingsHTML = '';
+                const { alokasiWaktu, modelPembelajaran, materiSpesifik, materiJudul, materiKey } = d;
+                const totalMenitPerPertemuan = alokasiWaktu.jpPerPertemuan * alokasiWaktu.menitPerJP;
+                const durasi = { pendahuluan: Math.round(totalMenitPerPertemuan * 0.15), penutup: Math.round(totalMenitPerPertemuan * 0.15), inti: totalMenitPerPertemuan - (2 * Math.round(totalMenitPerPertemuan * 0.15)) };
+                const placeholderMateri = materiSpesifik || materiJudul.replace(/Aktivitas.*?:\s*|Permainan\s*|Kesehatan:\s*|Pembelajaran\s*|Evaluasi\s*/, '').trim();
+
+                for (let i = 0; i < alokasiWaktu.jumlahPertemuan; i++) {
+                    const pertemuanKe = i + 1;
+                    let kegiatanHTML = `<h4>Pertemuan Ke-${pertemuanKe} (${alokasiWaktu.jpPerPertemuan} JP x ${alokasiWaktu.menitPerJP} Menit)</h4>`;
+                    
+                    kegiatanHTML += `<p><strong>Kegiatan Pendahuluan (${durasi.pendahuluan} Menit):</strong></p><ol>
+                        <li>Guru membuka pelajaran, berdoa, memeriksa kehadiran, dan memastikan kesiapan siswa. ${getLearningLabel("mindful")}</li>
+                        <li>Apersepsi: Guru mengaitkan materi dengan pengalaman siswa atau isu terkini dalam olahraga. ${getLearningLabel("meaningful")}</li>
+                        <li>Guru menyampaikan tujuan pembelajaran, kriteria asesmen, dan alur kegiatan. ${getPengalamanLabel('memahami')}</li>
+                        <li>Pemanasan dinamis dan permainan fungsional yang relevan dengan materi inti. ${getLearningLabel("joyful")}</li>
+                    </ol>`;
+
+                    kegiatanHTML += `<p><strong>Kegiatan Inti (${durasi.inti} Menit) - Sintaks Model ${modelPembelajaran}:</strong></p>`;
+                    
+                    let modelSintaks = sintaksDatabase.default[modelPembelajaran] || sintaksDatabase.default['Default'];
+                    
+                    kegiatanHTML += `<table style="width: 100%; border-collapse: collapse; margin-top: 1em; font-size: 0.9em; page-break-inside: avoid;">
+                        <thead style="background-color: #f9fafb;"><tr>
+                            <th style="width: 25%; border: 1px solid #d1d5db; padding: 0.75rem; text-align: left; font-weight: 600;">Fase Pembelajaran</th>
+                            <th style="border: 1px solid #d1d5db; padding: 0.75rem; text-align: left; font-weight: 600;">Aktivitas Guru dan Peserta Didik</th>
+                            <th style="width: 20%; border: 1px solid #d1d5db; padding: 0.75rem; text-align: left; font-weight: 600;">Pengalaman Belajar</th>
+                        </tr></thead><tbody>`;
+
+                    modelSintaks.forEach(step => {
+                        const activityText = step.activity.replace(/{materi_spesifik}/g, `<strong>${placeholderMateri}</strong>`);
+                        kegiatanHTML += `<tr>
+                            <td style="border: 1px solid #d1d5db; padding: 0.75rem; font-weight: 600; vertical-align: top;">${step.phase}</td>
+                            <td style="border: 1px solid #d1d5db; padding: 0.75rem; vertical-align: top;">${activityText} ${getLearningLabel(activityText)}</td>
+                            <td style="border: 1px solid #d1d5db; padding: 0.75rem; vertical-align: top;">${getPengalamanLabel(step.experience)}</td>
+                        </tr>`;
+                    });
+
+                    kegiatanHTML += `</tbody></table>`;
+                    
+                    kegiatanHTML += `<p><strong>Kegiatan Penutup (${durasi.penutup} Menit):</strong></p><ol>
+                        <li>Pendinginan dengan peregangan statis untuk mengembalikan kondisi tubuh. ${getLearningLabel("mindful")}</li>
+                        <li>Siswa dan guru melakukan refleksi dan menyimpulkan pembelajaran hari ini. ${getPengalamanLabel('merefleksi')}</li>
+                        <li>Guru memberikan umpan balik umum dan apresiasi terhadap usaha seluruh siswa.</li>
+                        <li>Guru menutup pelajaran dengan doa dan menyampaikan gambaran pertemuan berikutnya.</li>
+                    </ol>`;
+
+                    allMeetingsHTML += kegiatanHTML;
+                    if (i < alokasiWaktu.jumlahPertemuan - 1) {
+                        allMeetingsHTML += '<hr style="border-top: 1px dashed #ccc; margin: 2rem 0;">';
+                    }
+                }
+                return allMeetingsHTML;
+            }
+
+            function buildAsesmenSection(d) {
+                 return `
+                    <table class="info-table">
+                        <thead><tr><th>Jenis Asesmen</th><th>Tujuan</th><th>Teknik & Instrumen</th></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Diagnostik</strong></td>
+                                <td>Mengidentifikasi pemahaman konsep dan keterampilan awal siswa.</td>
+                                <td><strong>Teknik:</strong> Tanya jawab, pre-test singkat.<br><strong>Instrumen:</strong> Pertanyaan pemantik, lembar pre-test.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Formatif</strong></td>
+                                <td>Memantau kemajuan, memberikan umpan balik selama proses belajar.</td>
+                                <td><strong>Teknik:</strong> Observasi, penilaian diri/rekan.<br><strong>Instrumen:</strong> Lembar observasi sikap (kolaborasi, penalaran kritis), rubrik unjuk kerja.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sumatif</strong></td>
+                                <td>Mengukur ketercapaian tujuan di akhir unit pembelajaran.</td>
+                                <td><strong>Teknik:</strong> Unjuk kerja, tes keterampilan, proyek.<br><strong>Instrumen:</strong> Format Penilaian Otentik (lihat lampiran).</td>
+                            </tr>
+                        </tbody>
+                    </table>`;
+            }
+
+            function buildPengayaanRemedial(d) {
+                const placeholderMateri = d.materiSpesifik || d.materiJudul.replace(/Aktivitas.*?:\s*/, '').trim();
+                const pengayaanText = `Siswa yang telah mencapai tujuan pembelajaran diberikan tantangan untuk menganalisis video pertandingan profesional terkait ${placeholderMateri.toLowerCase()}, atau merancang variasi latihan yang lebih kompleks untuk teman-temannya.`;
+                const remedialText = `Siswa yang belum mencapai tujuan diberikan bimbingan tambahan dengan memecah keterampilan menjadi bagian yang lebih kecil (chunking), menggunakan video slow-motion untuk analisis, dan mendapatkan lebih banyak sesi latihan terbimbing.`;
+                return `<p><strong>Pengayaan:</strong><br>${pengayaanText}</p><p class="mt-4"><strong>Remedial:</strong><br>${remedialText}</p>`;
+            }
+
+            function buildRefleksi(d) {
+                return `
+                    <h5><strong>Refleksi Guru</strong></h5>
+                    <ul>
+                        <li>Apakah sintaks model pembelajaran "${d.modelPembelajaran}" berjalan efektif untuk mencapai tujuan?</li>
+                        <li>Bagian mana dari kegiatan yang paling menantang bagi siswa? Bagaimana saya bisa memperbaikinya?</li>
+                        <li>Apakah diferensiasi (pengayaan/remedial) yang saya lakukan sudah tepat sasaran?</li>
+                    </ul>
+                    <h5 class="mt-6"><strong>Refleksi Peserta Didik</strong></h5>
+                    <ul>
+                        <li>Apa strategi atau konsep baru yang saya pelajari hari ini?</li>
+                        <li>Bagaimana saya bisa menerapkan pembelajaran hari ini untuk meningkatkan performa saya?</li>
+                        <li>Apa kontribusi terbesar saya untuk tim/kelompok hari ini?</li>
+                    </ul>`;
+            }
+            
+            function buildLkpd(d) {
+                const placeholderMateri = d.materiSpesifik || d.materiJudul.replace(/Aktivitas.*?:\s*/, '').trim();
+                return `<h3>1. Lembar Kerja Peserta Didik (LKPD)</h3><div class="lampiran-box">
+                    <p><strong>Topik Kegiatan:</strong> Analisis & Praktik ${placeholderMateri}</p>
+                    <p><strong>Tujuan:</strong> Siswa dapat menganalisis dan mempraktikkan ${placeholderMateri.toLowerCase()} sesuai dengan kriteria penilaian.</p><hr class="my-2">
+                    <h5><strong>A. Petunjuk & Langkah Kerja</strong></h5>
+                    <ol>
+                        <li>Bekerjalah sesuai arahan guru dan sintaks model pembelajaran <strong>${d.modelPembelajaran}</strong>.</li>
+                        <li>Amati demonstrasi dari guru atau video, identifikasi poin-poin kunci gerakan/taktik.</li>
+                        <li>Praktikkan secara individu atau berkelompok, berikan umpan balik yang konstruktif kepada rekan.</li>
+                        <li>Gunakan rubrik penilaian untuk mengevaluasi performa diri sendiri dan rekan.</li>
+                    </ol>
+                    <hr class="my-2"><h5><strong>B. Pertanyaan Analisis & Refleksi</strong></h5><ul><li>Identifikasi 2-3 kesalahan umum yang sering terjadi saat melakukan ${placeholderMateri.toLowerCase()}!</li><li>Bagaimana prinsip biomekanika (misal: tumpuan, keseimbangan, tenaga) diterapkan dalam gerakan ini?</li></ul>
+                </div>`;
+            }
+
+            function buildAsesmenOtentik(d) {
+                const placeholderMateri = d.materiSpesifik || d.materiJudul.replace(/Aktivitas.*?:\s*/, '').trim();
+                const criteria = [
+                    { name: 'Persiapan & Sikap Awal', desc: 'Posisi tubuh, fokus, dan kesiapan sebelum melakukan gerak.' },
+                    { name: 'Proses & Teknik Gerak', desc: 'Kualitas, efisiensi, dan kebenaran gerakan inti sesuai prinsip biomekanika.' },
+                    { name: 'Sikap Akhir & Follow Through', desc: 'Posisi tubuh setelah selesai melakukan gerakan untuk menjaga keseimbangan dan efektivitas.' },
+                    { name: 'Penerapan dalam Permainan', desc: 'Kemampuan menggunakan keterampilan/taktik secara efektif dan tepat dalam situasi permainan.' }
+                ];
+
+                let rubrikHTML = `<h3>2. Format Penilaian Otentik (Sumatif)</h3><div class="lampiran-box">
+                    <p><strong>Bentuk Asesmen:</strong> Unjuk Kerja: Praktik Keterampilan ${placeholderMateri}</p>
+                    <h5 style="margin-top:1.5rem;"><strong>Rubrik Penilaian Keterampilan:</strong></h5>
+                    <table style="font-size:0.85em;">
+                        <thead><tr><th>Kriteria</th><th>Skor 4 (Sangat Kompeten)</th><th>Skor 3 (Kompeten)</th><th>Skor 2 (Cukup Kompeten)</th><th>Skor 1 (Perlu Bimbingan)</th></tr></thead>
+                        <tbody>`;
+                
+                criteria.forEach(c => {
+                    rubrikHTML += `<tr>
+                        <td><strong>${c.name}</strong><br><small>${c.desc}</small></td>
+                        <td>Mampu melakukan dengan benar, konsisten, dan efektif dalam berbagai situasi.</td>
+                        <td>Mampu melakukan dengan benar, namun belum konsisten pada situasi yang kompleks.</td>
+                        <td>Mampu melakukan teknik dasar, namun masih banyak kesalahan signifikan.</td>
+                        <td>Memerlukan bimbingan intensif pada hampir semua aspek.</td>
+                    </tr>`;
+                });
+
+                rubrikHTML += `</tbody></table></div>`;
+                return rubrikHTML;
+            }
+
+            function buildCodingPJOKLampiran(d) {
+                return `<h3>3. Aktivitas Pembelajaran Coding PJOK (Unplugged)</h3>
+                    <div class="lampiran-box">
+                        <p class="font-semibold text-gray-700">Petunjuk:</p>
+                        <p>Aktivitas di bawah ini adalah kegiatan pengayaan yang menghubungkan PJOK dengan berpikir komputasional. Gunakan tombol <strong class="text-sky-600">'Ide Coding PJOK'</strong> pada Fitur Canggih untuk menghasilkan ide aktivitas yang relevan, lalu salin dan tempelkan hasilnya di sini.</p>
+                        <div class="mt-4 p-4 border-2 border-dashed rounded-md bg-gray-50 text-center text-gray-500">
+                            [ Tempelkan hasil dari 'Ide Coding PJOK' di sini ]
+                        </div>
+                    </div>`;
+            }
+            
+            function buildGlosarium(d) {
+                const termBank = { 'biomekanika': 'Ilmu yang mempelajari mekanisme gerak pada sistem biologis.', 'strategi': 'Rencana tingkat tinggi untuk mencapai tujuan dalam permainan.', 'taktik': 'Implementasi spesifik dari strategi dalam situasi permainan.', 'formasi': 'Susunan atau posisi pemain dalam sebuah tim.', 'fair play': 'Sikap sportif, jujur, dan menghormati aturan serta lawan dalam bermain.', 'prinsip FITT': 'Panduan untuk menyusun program latihan (Frequency, Intensity, Time, Type).', 'resusitasi jantung paru (RJP)': 'Tindakan pertolongan pertama pada orang yang mengalami henti jantung.', 'kebugaran jasmani': 'Kesanggupan tubuh untuk melakukan aktivitas tanpa mengalami kelelahan yang berarti.' };
+                let foundTerms = new Set(['fair play', 'kebugaran jasmani']);
+                const contentToCheck = (d.materiJudul + d.materiSpesifik).toLowerCase();
+                for (const term in termBank) { if (contentToCheck.includes(term)) foundTerms.add(term); }
+                
+                let glosariumHTML = `<h3>1. Glosarium</h3><div class="lampiran-box"><ul>`;
+                Array.from(foundTerms).sort().forEach(term => {
+                    glosariumHTML += `<li><strong>${term.charAt(0).toUpperCase() + term.slice(1)}:</strong> ${termBank[term]}</li>`;
+                });
+                glosariumHTML += `</ul></div>`;
+                return glosariumHTML;
+            }
+
+            function buildDaftarPustaka(d) {
+                const year = new Date().getFullYear();
+                return `<h3 class="subsection-title">2. Daftar Pustaka</h3><div class="lampiran-box"><ul>
+                    <li>Muhajir. (${year}). <em>Buku Panduan Guru Pendidikan Jasmani, Olahraga, dan Kesehatan untuk SMA/SMK Kelas ${d.kelas}</em>. Jakarta: Kemendikbudristek.</li>
+                    <li>Muhajir. (${year}). <em>Pendidikan Jasmani, Olahraga, dan Kesehatan untuk SMA/SMK Kelas ${d.kelas}</em>. Jakarta: Kemendikbudristek.</li>
+                    <li>Sumber video analisis olahraga dari YouTube, platform streaming, atau media relevan lainnya.</li>
+                </ul></div>`;
+            }
+
+            // --- FUNGSI-FUNGSI BANTUAN AI (GEMINI) ---
+            async function callGemini(prompt) {
+                // *** PERUBAHAN KUNCI: Memanggil fungsi serverless, bukan API Google secara langsung ***
+                const serverlessUrl = '/.netlify/functions/gemini';
+                
+                try {
+                    const response = await fetch(serverlessUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ prompt: prompt }) // Mengirim prompt dalam body request
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(`Error dari serverless function: ${errorData.error || response.statusText}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    if (result.candidates && result.candidates[0]?.content?.parts[0]?.text) {
+                        return result.candidates[0].content.parts[0].text;
+                    }
+                    // Handle jika struktur respons dari Google API tidak seperti yang diharapkan
+                    if (result.error) {
+                        throw new Error(`API Error from Google: ${result.error.message}`);
+                    }
+                    throw new Error("Respons dari serverless function tidak valid.");
+
+                } catch (error) {
+                    console.error("callGemini Error:", error);
+                    return `Terjadi kesalahan saat menghubungi asisten AI: ${error.message}. Mohon periksa konsol untuk detailnya.`;
+                }
+            }
+
+            function markdownToHtml(text) {
+                const lines = text.replace(/\r/g, '').split('\n');
+                let html = '';
+                let inList = null;
+                function closeList() { if (inList) { html += `</${inList}>`; inList = null; } }
+                for (let line of lines) {
+                    line = line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>');
+                    const trimmedLine = line.trim();
+                    if (trimmedLine.startsWith('### ')) { closeList(); html += `<h3>${line.substring(4)}</h3>`; continue; }
+                    if (trimmedLine.startsWith('## ')) { closeList(); html += `<h2>${line.substring(3)}</h2>`; continue; }
+                    if (trimmedLine.startsWith('# ')) { closeList(); html += `<h1>${line.substring(2)}</h1>`; continue; }
+                    const isUl = trimmedLine.startsWith('- ') || trimmedLine.startsWith('* ');
+                    const isOl = /^\d+\.\s/.test(trimmedLine);
+                    if (isUl) { if (inList !== 'ul') { closeList(); html += '<ul>'; inList = 'ul'; } html += `<li>${line.substring(line.indexOf(' ') + 1)}</li>`; } 
+                    else if (isOl) { if (inList !== 'ol') { closeList(); html += '<ol>'; inList = 'ol'; } html += `<li>${line.substring(line.indexOf(' ') + 1)}</li>`; } 
+                    else { closeList(); if (trimmedLine.length > 0) { html += `<p>${line}</p>`; } }
+                }
+                closeList(); return html;
+            }
+
+            function showModal(title, content) {
+                ui.gemini.modalTitle.innerText = title;
+                ui.gemini.modalContent.innerHTML = content; // Konten sudah dalam format HTML
+                ui.gemini.modal.classList.remove('hidden');
+                lucide.createIcons();
+            }
+            
+            function setupGeminiListeners() {
+                const geminiPromptSuffix = " Format jawaban dalam bentuk markdown (gunakan ### untuk subjudul, * atau 1. untuk list, dan **teks** untuk bold).";
+
+                async function handleGeminiRequest(button, icon, title, prompt) {
+                    const loadingHTML = `<div class="text-center p-4"><div class="text-4xl mb-4">${icon}</div><p class="animate-pulse text-gray-600">Memproses permintaan Anda dengan Asisten AI...</p></div>`;
+                    showModal(title, loadingHTML);
+                    const result = await callGemini(prompt);
+                    showModal(title, markdownToHtml(result));
+                }
+
+                ui.gemini.warmupBtn.addEventListener('click', () => { 
+                    const d = getFormInputs(); 
+                    const title = `Ide Pemanasan untuk ${d.materiJudul}`;
+                    const prompt = `Sebagai pelatih PJOK SMA, berikan 3 ide pemanasan yang inovatif dan relevan untuk materi '${d.materiJudul}' (fokus: ${d.materiSpesifik || 'dasar'}) untuk siswa Kelas ${d.kelas}. Jelaskan tujuan fisiologis, instruksi, dan koneksinya ke kegiatan inti.` + geminiPromptSuffix;
+                    handleGeminiRequest(ui.gemini.warmupBtn, '🔥', title, prompt);
+                });
+
+                ui.gemini.materiBtn.addEventListener('click', () => { 
+                    const d = getFormInputs(); 
+                    const title = `Materi Mendalam: ${d.materiJudul}`;
+                    const prompt = `Sebagai ahli materi PJOK SMA, jelaskan materi '${d.materiJudul}' (fokus: ${d.materiSpesifik || 'dasar'}) untuk siswa Kelas ${d.kelas}. Sertakan konsep kunci, prinsip biomekanik, analisis kesalahan umum, dan tips perbaikan.` + geminiPromptSuffix;
+                    handleGeminiRequest(ui.gemini.materiBtn, '📚', title, prompt);
+                });
+
+                ui.gemini.quizBtn.addEventListener('click', () => { 
+                    const d = getFormInputs(); 
+                    const title = `Kuis Analitis: ${d.materiJudul}`;
+                    const prompt = `Sebagai ahli evaluasi PJOK SMA, buat 5 soal kuis pilihan ganda (A, B, C, D) tingkat tinggi (analisis, evaluasi) untuk materi '${d.materiJudul}' (fokus: ${d.materiSpesifik || 'dasar'}) untuk siswa Kelas ${d.kelas}. Sertakan kunci jawaban dan penjelasan singkat.` + geminiPromptSuffix;
+                    handleGeminiRequest(ui.gemini.quizBtn, '🧩', title, prompt);
+                });
+
+                ui.gemini.codingBtn.addEventListener('click', () => { 
+                    const d = getFormInputs(); 
+                    const title = `Ide Unplugged Coding (Tanpa Komputer)`; 
+                    const prompt = `Sebagai guru PJOK inovatif, berikan 2 ide konkret untuk aktivitas "Unplugged Coding" yang terintegrasi dengan materi pelajaran PJOK tingkat SMA.
+                    Konteks Pembelajaran:
+                    - Kelas: ${d.kelas} SMA
+                    - Materi Pelajaran: '${d.materiJudul}' (Fokus: ${d.materiSpesifik || 'dasar'})
+                    - Model Pembelajaran: '${d.modelPembelajaran}'
+                    Untuk setiap ide, jelaskan:
+                    1.  **Nama Aktivitas:**
+                    2.  **Konsep Coding yang Diajarkan:** (Contoh: Algoritma/Urutan, Loop/Perulangan, Kondisional/Jika-Maka, Debugging)
+                    3.  **Integrasi dengan Materi PJOK:**
+                    4.  **Langkah-langkah Pelaksanaan di Lapangan:**
+                    ` + geminiPromptSuffix;
+                    handleGeminiRequest(ui.gemini.codingBtn, '💻', title, prompt);
+                });
+            }
+
+            function copyToClipboard(htmlContent, plainText, buttonElement, successIcon, originalContent) {
+                const listener = (ev) => {
+                    ev.preventDefault();
+                    ev.clipboardData.setData('text/html', htmlContent);
+                    ev.clipboardData.setData('text/plain', plainText);
+                };
+                document.addEventListener('copy', listener);
+                document.execCommand('copy');
+                document.removeEventListener('copy', listener);
+
+                buttonElement.innerHTML = successIcon;
+                lucide.createIcons();
+
+                setTimeout(() => {
+                    buttonElement.innerHTML = originalContent;
+                    lucide.createIcons();
+                }, 2000);
+            }
+
+            function setupEventListeners() {
+                ui.fase.addEventListener('change', populateKelas);
+                ui.kelas.addEventListener('change', populateMateri);
+                ui.materiPembelajaran.addEventListener('change', updateElemenFromMateri);
+                ui.form.addEventListener('submit', handleGenerate);
+
+                ui.gemini.modalClose.addEventListener('click', () => ui.gemini.modal.classList.add('hidden'));
+                
+                ui.gemini.modalCopy.addEventListener('click', () => {
+                    const contentHTML = ui.gemini.modalContent.innerHTML;
+                    const title = ui.gemini.modalTitle.innerText;
+                    const fullHtml = `<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><title>${title}</title><style>${copyStyles}</style></head><body><div class="prose">${contentHTML}</div></body></html>`;
+                    const plainText = ui.gemini.modalContent.innerText;
+                    copyToClipboard(fullHtml, plainText, ui.gemini.modalCopy, '<i data-lucide="check" class="inline-block mr-2 h-5 w-5"></i> Tersalin!', 'Salin Teks');
+                });
+                
+                ui.output.copyBtn.addEventListener('click', () => {
+                    const htmlContent = ui.output.content.innerHTML;
+                    const title = ui.output.content.querySelector('.subtitle')?.innerText || 'Modul Ajar PJOK';
+                    const fullHtml = `<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><title>${title}</title><style>${copyStyles}</style></head><body><div class="prose">${htmlContent}</div></body></html>`;
+                    const plainText = ui.output.content.innerText;
+                    copyToClipboard(fullHtml, plainText, ui.output.copyBtn, '<i data-lucide="check" class="mr-2 h-4 w-4"></i> Tersalin!', '<i data-lucide="copy" class="mr-2 h-4 w-4"></i> Salin');
+                });
+
+                ui.output.backBtn.addEventListener('click', () => {
+                    ui.output.content.innerHTML = '';
+                    ui.output.placeholder.classList.remove('hidden');
+                    ui.output.actionButtonsWrapper.classList.add('hidden');
+                });
+            }
+
+            // --- INISIALISASI APLIKASI ---
+            setupInitialOptions();
+            populateKelas();
+            setupEventListeners();
+            setupGeminiListeners();
+        });
+    </script>
+</body>
+</html>
