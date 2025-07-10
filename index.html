@@ -1053,7 +1053,11 @@
                 ui.gemini.materiBtn.addEventListener('click', () => { 
                     const d = getFormInputs(); 
                     const title = `Materi Mendalam: ${d.materiJudul}`;
-                    const prompt = `Sebagai ahli materi PJOK SMA, jelaskan materi '${d.materiJudul}' (fokus: ${d.materiSpesifik || 'dasar'}) untuk siswa Kelas ${d.kelas}. Sertakan konsep kunci, prinsip biomekanik, analisis kesalahan umum, dan tips perbaikan.` + geminiPromptSuffix;
+                    // --- PERBAIKAN DI SINI ---
+                    // Prompt lama yang terlalu kompleks:
+                    // const prompt = `Sebagai ahli materi PJOK SMA, jelaskan materi '${d.materiJudul}' (fokus: ${d.materiSpesifik || 'dasar'}) untuk siswa Kelas ${d.kelas}. Sertakan konsep kunci, prinsip biomekanik, analisis kesalahan umum, dan tips perbaikan.` + geminiPromptSuffix;
+                    // Prompt baru yang lebih sederhana untuk menghindari timeout:
+                    const prompt = `Sebagai ahli materi PJOK, buat ringkasan materi ajar untuk '${d.materiJudul}' (fokus pada: ${d.materiSpesifik || 'dasar'}) bagi siswa SMA Kelas ${d.kelas}. Tulis dalam poin-poin utama yang mencakup: 1. Konsep Kunci, 2. Kesalahan Umum, dan 3. Tips Perbaikan.` + geminiPromptSuffix;
                     handleGeminiRequest(ui.gemini.materiBtn, '📚', title, prompt);
                 });
 
