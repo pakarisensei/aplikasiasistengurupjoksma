@@ -180,20 +180,20 @@
             // --- DATABASE PJOK SMA (INTI APLIKASI) ---
             const capaianPerElemen = {
                 'Terampil Bergerak': {
-                    E: "Peserta didik merancang, menerapkan, dan menghaluskan keterampilan gerak spesifik di dalam berbagai situasi gerak yang menantang. Peserta didik menciptakan dan mengembangkan strategi gerak untuk mendapatkan keberhasilan capaian keterampilan gerak melintasi berbagai situasi gerak yang menantang. Peserta didik menerapkan konsep gerak di dalam situasi gerak baru yang menantang dan menganalisis dampak tiap konsep pada capaian keterampilan gerak.",
-                    F: "Peserta didik merancang, menerapkan, menghaluskan dan mengevaluasi keterampilan gerak spesifik di dalam berbagai situasi gerak yang menantang untuk meningkatkan kinerja gerak. Peserta didik menciptakan, mengembangkan, dan mengevaluasi strategi gerak untuk mendapatkan keberhasilan capaian keterampilan gerak melintasi berbagai situasi gerak yang menantang. Peserta didik menerapkan konsep gerak di dalam situasi gerak baru yang menantang dan mengevaluasi dampak tiap konsep pada capaian keterampilan gerak."
+                    E: "Menerapkan keterampilan gerak spesifik di dalam berbagai situasi gerak yang menantang; mengembangkan strategi gerak untuk mendapatkan keberhasilan capaian keterampilan gerak melintasi berbagai situasi gerak yang menantang.",
+                    F: "Mengevaluasi keterampilan gerak spesifik di dalam berbagai situasi gerak yang menantang untuk meningkatkan kinerja gerak; mengevaluasi strategi gerak untuk mendapatkan keberhasilan capaian keterampilan gerak melintasi berbagai situasi gerak yang menantang."
                 },
                 'Belajar melalui Gerak': {
-                    E: "Peserta didik mentransfer dan mengadaptasi strategi gerak yang telah dikuasai dalam situasi gerak yang berbeda. Peserta didik memeragakan fair play dan mengevaluasi pengaruh perilaku etis terhadap capaian aktivitas jasmani bagi individu dan kelompok. Peserta didik merencanakan, menerapkan, dan menyempurnakan strategi pengambilan keputusan dalam kerja tim yang mempertunjukkan keterampilan kepemimpinan dan kolaborasi.",
-                    F: "Peserta didik mengadaptasi dan mengevaluasi strategi gerak yang telah dikuasai dalam situasi gerak baru yang menantang. Peserta didik mengevaluasi fair play dan merefleksikan pengaruh perilaku etis terhadap capaian aktivitas jasmani bagi individu dan kelompok. Peserta didik merancang dan mengevaluasi strategi pengambilan keputusan dalam kerja tim yang mempertunjukkan keterampilan kepemimpinan dan kolaborasi."
+                    E: "Merefleksikan transfer strategi gerak yang telah dikuasai dalam situasi gerak yang berbeda; memperagakan fair play dan mengevaluasi pengaruh perilaku etis terhadap capaian aktivitas jasmani bagi individu dan kelompok; serta menerapkan strategi pengambilan keputusan dalam kerja tim yang mempertunjukkan keterampilan kepemimpinan dan kolaborasi.",
+                    F: "Mengevaluasi strategi gerak yang telah dikuasai dalam situasi gerak baru yang menantang; mengevaluasi fair play dan merefleksikan pengaruh perilaku etis terhadap capaian aktivitas jasmani bagi individu dan kelompok; dan mengevaluasi strategi pengambilan keputusan dalam kerja tim yang mempertunjukkan keterampilan kepemimpinan dan kolaborasi."
                 },
                 'Bergaya Hidup Aktif': {
-                    E: "Peserta didik berpartisipasi dalam aktivitas kebugaran dan menginvestigasi dampak partisipasi yang teratur terhadap kesehatan. Peserta didik berpartisipasi dalam aktivitas kebugaran di luar ruang dan/atau lingkungan alam, dan merancang strategi peningkatan pemanfaatannya. Peserta didik merancang strategi peningkatan aktivitas kebugaran untuk kesehatan.",
-                    F: "Peserta didik berpartisipasi dalam aktivitas kebugaran dan mengevaluasi dampak partisipasi yang teratur terhadap kesehatan. Peserta didik berpartisipasi dalam aktivitas kebugaran di luar ruang dan/atau lingkungan alam, dan mengevaluasi strategi peningkatan pemanfaatannya. Peserta didik mengevaluasi efektivitas strategi peningkatan aktivitas kebugaran untuk kesehatan."
+                    E: "Berpartisipasi dalam aktivitas kebugaran dan menginvestigasi dampak partisipasi yang teratur terhadap kesehatan; merancang strategi peningkatan aktivitas kebugaran untuk kesehatan.",
+                    F: "Berpartisipasi dalam aktivitas kebugaran dan mengevaluasi dampak partisipasi yang teratur terhadap kesehatan; mengevaluasi efektivitas strategi peningkatan aktivitas kebugaran untuk kesehatan."
                 },
                 'Memilih Hidup yang Menyehatkan': {
-                    E: "Peserta didik mengevaluasi risiko kesehatan akibat gaya hidup dan tindakan pencegahan melalui aktivitas jasmani serta mempromosikannya menggunakan berbagai media. Peserta didik mengevaluasi pilihan makanan sehat berdasarkan analisis kandungan gizi sesuai kebutuhan aktivitas jasmani.",
-                    F: "Peserta didik mengadvokasi gaya hidup aktif dan sehat melalui aktivitas jasmani menggunakan berbagai media, mengadvokasi makanan sehat dan bergizi seimbang kepada orang lain sesuai kebutuhan aktivitas jasmaninya, dan mempraktikkan tindakan Resusitasi Jantung-Paru (RJP) sesuai Prosedur Operasional Standar (POS) sebagai upaya penyelamatan hidup."
+                    E: "Mengevaluasi risiko kesehatan akibat gaya hidup dan tindakan pencegahan melalui aktivitas jasmani serta mempromosikannya menggunakan berbagai media; mengevaluasi pola makan sehat berdasarkan analisis kandungan gizi sesuai kebutuhan aktivitas jasmani; dan mempraktikkan pertolongan pertama.",
+                    F: "Mengadvokasi gaya hidup aktif dan sehat melalui aktivitas jasmani menggunakan berbagai media; mengadvokasi pola makan sehat dan bergizi seimbang kepada orang lain sesuai kebutuhan aktivitas jasmaninya; dan mempraktikkan tindakan penyelamatan hidup sesuai prosedur operasional standar (POS)."
                 }
             };
             const elemenList = [ 'Terampil Bergerak', 'Belajar melalui Gerak', 'Bergaya Hidup Aktif', 'Memilih Hidup yang Menyehatkan' ];
@@ -204,6 +204,7 @@
                     'invasi-bolatangan-10': { text: 'Permainan Invasi (Bola Tangan)', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'Menggiring, passing, shooting sambil berjalan/berlari, bermain dengan peraturan modifikasi.' },
                     'net-voli-10': { text: 'Permainan Net (Bola Voli)', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'passing bawah, passing atas, spike, block' },
                     'net-bulutangkis-10': { text: 'Permainan Net (Bulu Tangkis)', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'pukulan smash, pukulan lob, variasi pukulan' },
+                    'net-pickleball-10': { text: 'Permainan Net (Pickleball)', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'Pukulan dasar (groundstroke, volley), servis, aturan dasar' },
                     'atletik-10': { text: 'Aktivitas Atletik (Lari, Lompat, Lempar)', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'sprint, lompat jauh, tolak peluru' },
                     'senam-lantai-10': { text: 'Aktivitas Senam (Senam Lantai)', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'guling depan, guling belakang, sikap lilin' },
                     'gerak-berirama-10': { text: 'Aktivitas Gerak Berirama', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'kombinasi gerak langkah & ayunan' },
@@ -212,6 +213,7 @@
                 '11': {
                     'invasi-basket-11': { text: 'Permainan Invasi (Bola Basket)', elemenTerkait: 'Belajar melalui Gerak', contohSpesifik: 'strategi penyerangan dan pertahanan dasar' },
                     'net-voli-11': { text: 'Permainan Net (Bola Voli)', elemenTerkait: 'Belajar melalui Gerak', contohSpesifik: 'formasi permainan, rotasi pemain' },
+                    'net-pickleball-11': { text: 'Permainan Net (Pickleball)', elemenTerkait: 'Belajar melalui Gerak', contohSpesifik: 'Strategi dinking, third shot drop, formasi ganda' },
                     'lapangan-sofbol-11': { text: 'Permainan Lapangan (Sofbol)', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'melempar, menangkap, memukul bola' },
                     'beladiri-silat-11': { text: 'Aktivitas Bela Diri (Pencak Silat)', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'kuda-kuda, pukulan, tendangan, tangkisan' },
                     'senam-alat-11': { text: 'Aktivitas Senam (Menggunakan Alat)', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'lompat kangkang, lompat jongkok' },
@@ -222,6 +224,7 @@
                 '12': {
                     'invasi-evaluasi-12': { text: 'Evaluasi Taktik Permainan Invasi', elemenTerkait: 'Belajar melalui Gerak', contohSpesifik: 'analisis video pertandingan, evaluasi pola serangan' },
                     'net-evaluasi-12': { text: 'Evaluasi Taktik Permainan Net', elemenTerkait: 'Belajar melalui Gerak', contohSpesifik: 'evaluasi efektivitas servis dan spike' },
+                    'net-pickleball-12': { text: 'Evaluasi Taktik Permainan Net (Pickleball)', elemenTerkait: 'Belajar melalui Gerak', contohSpesifik: 'Analisis video, evaluasi penempatan bola dan pemilihan pukulan' },
                     'atletik-evaluasi-12': { text: 'Evaluasi Keterampilan Atletik', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'analisis gerak lari jarak pendek, lompat tinggi' },
                     'beladiri-evaluasi-12': { text: 'Evaluasi Rangkaian Gerak Bela Diri', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'evaluasi jurus tunggal pencak silat' },
                     'senam-evaluasi-12': { text: 'Evaluasi Rangkaian Senam Lantai', elemenTerkait: 'Terampil Bergerak', contohSpesifik: 'evaluasi rangkaian guling, handstand, meroda' },
@@ -253,69 +256,86 @@
             const kelasByFase = { E: [10], F: [11, 12] };
 
             const sintaksDatabase = {
+                kontekstual: {
+                    'invasi': {
+                        'Terampil Bergerak': {
+                            'Direct Instruction': {
+                                'pertemuan_1': [ { phase: 'Fase 1: Penjelasan & Demonstrasi', activity: 'Guru menjelaskan poin-poin kunci dari teknik {materi_spesifik} dan mendemonstrasikannya secara presisi.', experience: 'memahami' }, { phase: 'Fase 2: Latihan Drill Terisolasi', activity: 'Siswa berlatih drill teknik {materi_spesifik} tanpa lawan (misal: dribbling melewati cone, shooting ke target) untuk membangun memori otot.', experience: 'mengaplikasi' } ],
+                                'pertemuan_2': [ { phase: 'Fase 3: Latihan dengan Tekanan Rendah', activity: 'Siswa menerapkan teknik {materi_spesifik} dengan lawan pasif atau semi-aktif untuk membiasakan diri dengan situasi permainan.', experience: 'mengaplikasi' }, { phase: 'Fase 4: Umpan Balik Korektif', activity: 'Guru dan rekan memberikan umpan balik spesifik pada detail teknis (misal: posisi kaki, pelepasan bola) untuk perbaikan.', experience: 'merefleksi' } ]
+                            }
+                        },
+                        'Belajar melalui Gerak': {
+                            'Tactical Games Model': {
+                                'pertemuan_1': [ { phase: 'Fase 1: Game Taktis Awal', activity: 'Siswa bermain game 3v3 di area terbatas dengan fokus pada masalah taktis seperti *menciptakan ruang tembak* atau *menembus pertahanan lawan*.', experience: 'mengaplikasi' }, { phase: 'Fase 2: Diskusi & Analisis Taktik', activity: 'Guru memandu diskusi: "Pola serangan apa yang efektif? Bagaimana kita bisa mengantisipasi gerakan lawan?"', experience: 'memahami' } ],
+                                'pertemuan_2': [ { phase: 'Fase 3: Latihan Opsi Taktis', activity: 'Tim berlatih beberapa opsi pola serangan atau pertahanan sederhana (misal: *give and go*, *zonal marking*) sebagai solusi masalah taktis.', experience: 'mengaplikasi' }, { phase: 'Fase 4: Game Taktis Lanjutan', activity: 'Siswa kembali bermain game, kini dengan tujuan menerapkan dan mengevaluasi pola taktis yang telah dilatih.', experience: 'mengaplikasi' } ]
+                            }
+                        }
+                    },
+                    'net': {
+                        'Terampil Bergerak': {
+                            'Direct Instruction': {
+                                'pertemuan_1': [ { phase: 'Fase 1: Penjelasan & Demonstrasi', activity: 'Guru menjelaskan detail teknis pukulan/gerakan {materi_spesifik}, fokus pada ayunan, perkenaan, dan gerak lanjutan (follow through).', experience: 'memahami' }, { phase: 'Fase 2: Latihan Drill Berulang', activity: 'Siswa berlatih pukulan {materi_spesifik} secara berulang dengan bola yang diumpan oleh guru atau teman (feeding) untuk konsistensi.', experience: 'mengaplikasi' } ],
+                                'pertemuan_2': [ { phase: 'Fase 3: Latihan dengan Target', activity: 'Siswa melakukan pukulan {materi_spesifik} dengan target area spesifik di lapangan untuk melatih akurasi dan penempatan bola.', experience: 'mengaplikasi' }, { phase: 'Fase 4: Umpan Balik & Analisis Video', activity: 'Guru menggunakan video (jika ada) untuk menunjukkan detail gerakan siswa dan memberikan umpan balik untuk perbaikan.', experience: 'merefleksi' } ]
+                            }
+                        },
+                        'Belajar melalui Gerak': {
+                            'Tactical Games Model': {
+                                'pertemuan_1': [ { phase: 'Fase 1: Game Kondisional', activity: 'Siswa bermain game ganda dengan aturan khusus (misal: poin hanya didapat dari pukulan {materi_spesifik}) untuk mengidentifikasi masalah taktis terkait *penempatan bola*.', experience: 'mengaplikasi' }, { phase: 'Fase 2: Diskusi & Analisis Taktik', activity: 'Guru mengajukan pertanyaan: "Ke area mana sebaiknya kita mengarahkan pukulan agar lawan kesulitan?" atau "Bagaimana posisi kita seharusnya setelah memukul bola?"', experience: 'memahami' } ],
+                                'pertemuan_2': [ { phase: 'Fase 3: Latihan Pola Permainan', activity: 'Pasangan pemain berlatih pola permainan sederhana (misal: servis-serangan, bertahan-serang balik) yang melibatkan {materi_spesifik}.', experience: 'mengaplikasi' }, { phase: 'Fase 4: Game Strategi', activity: 'Siswa kembali bermain game, kini dengan tujuan menerapkan pola permainan dan strategi yang telah dirancang.', experience: 'mengaplikasi' } ]
+                            }
+                        }
+                    },
+                    'senam': {
+                        'Terampil Bergerak': {
+                            'Direct Instruction': {
+                                'pertemuan_1': [ { phase: 'Fase 1: Persiapan & Tujuan', activity: 'Guru menjelaskan tujuan (menguasai rangkaian gerak {materi_spesifik}) dan kriteria penilaian, serta memastikan area aman.', experience: 'memahami' }, { phase: 'Fase 2: Demonstrasi & Chunking', activity: 'Guru mendemonstrasikan rangkaian gerak {materi_spesifik} secara utuh, lalu memecahnya menjadi bagian-bagian kecil (misal: awalan, tolakan, pendaratan).', experience: 'memahami' } ],
+                                'pertemuan_2': [ { phase: 'Fase 3: Latihan Terbimbing per Bagian', activity: 'Siswa berlatih setiap bagian gerakan secara terpisah di pos-pos latihan dengan bantuan dan umpan balik dari guru.', experience: 'mengaplikasi' }, { phase: 'Fase 4: Penggabungan Rangkaian', activity: 'Siswa mencoba menggabungkan bagian-bagian gerakan menjadi satu rangkaian utuh secara mandiri atau dengan bantuan spotter.', experience: 'mengaplikasi' } ]
+                            }
+                        }
+                    },
+                    'kebugaran': {
+                        'Bergaya Hidup Aktif': {
+                            'Project-Based Learning (PjBL)': {
+                                'pertemuan_1': [ { phase: 'Fase 1: Pertanyaan Mendasar', activity: 'Guru mengajukan pertanyaan: "Bagaimana kita bisa merancang dan memimpin sebuah program latihan sirkuit (circuit training) selama 15 menit yang efektif untuk teman-teman sekelas?"', experience: 'memahami' }, { phase: 'Fase 2: Merancang Proyek (Kelas)', activity: 'Kelompok siswa merancang 5-6 pos latihan kebugaran, menentukan durasi kerja dan istirahat, serta membuat panduan visual (poster) untuk setiap pos.', experience: 'mengaplikasi' } ],
+                                'pertemuan_2': [ { phase: 'Fase 3: Uji Coba & Revisi (Lapangan)', activity: 'Setiap kelompok mempraktikkan dan menyempurnakan program latihan mereka. Guru memonitor keamanan dan memberikan masukan terkait prinsip latihan.', experience: 'mengaplikasi' }, { phase: 'Fase 4: Implementasi & Kepemimpinan (Lapangan)', activity: 'Secara bergiliran, setiap kelompok memimpin sesi latihan sirkuit untuk kelompok lain, berperan sebagai instruktur.', experience: 'mengaplikasi' } ]
+                            }
+                        }
+                    },
+                    'kesehatan': {
+                        'Memilih Hidup yang Menyehatkan': {
+                            'Problem-Based Learning (PBL)': {
+                                'pertemuan_1': [ { phase: 'Fase 1: Orientasi Masalah (Kelas)', activity: 'Guru menyajikan studi kasus atau berita tentang masalah kesehatan relevan (misal: meningkatnya kasus obesitas remaja, bahaya merokok).', experience: 'memahami' }, { phase: 'Fase 2: Mengorganisasi Siswa (Kelas)', activity: 'Siswa membentuk kelompok dan mengidentifikasi apa yang mereka ketahui, tidak ketahui, dan apa yang perlu dipelajari untuk memahami masalah tersebut.', experience: 'memahami' } ],
+                                'pertemuan_2': [ { phase: 'Fase 3: Penyelidikan Mandiri/Kelompok (Kelas/Luar)', activity: 'Siswa melakukan riset (online, wawancara, dll) untuk mencari data dan informasi terkait penyebab, dampak, dan solusi dari masalah kesehatan tersebut.', experience: 'mengaplikasi' }, { phase: 'Fase 4: Mengembangkan & Menyajikan Solusi (Kelas)', activity: 'Kelompok mengembangkan solusi konkret (misal: rancangan kampanye media sosial, proposal acara sekolah) dan mempresentasikannya di depan kelas.', experience: 'mengaplikasi' } ]
+                            }
+                        }
+                    }
+                },
                 default: {
-                    'Direct Instruction': [
-                        { phase: 'Fase 1: Menyampaikan Tujuan & Mempersiapkan Siswa', activity: 'Guru menjelaskan tujuan pembelajaran, capaian, dan melakukan apersepsi terkait {materi_spesifik}.', experience: 'memahami' },
-                        { phase: 'Fase 2: Demonstrasi (I Do)', activity: 'Guru mendemonstrasikan keterampilan {materi_spesifik} secara benar, jelas, dan bertahap, menyoroti poin-poin kunci (key points) gerakan.', experience: 'memahami' },
-                        { phase: 'Fase 3: Latihan Terbimbing (We Do)', activity: 'Siswa meniru gerakan dengan bimbingan dan umpan balik korektif dari guru. Dalam kelompok kecil, siswa saling mengoreksi gerakan dasar {materi_spesifik}.', experience: 'mengaplikasi' },
-                        { phase: 'Fase 4: Latihan Mandiri & Penerapan (You Do)', activity: 'Siswa berlatih mandiri atau berpasangan untuk memantapkan gerakan. Guru memberikan variasi latihan dengan tingkat kesulitan meningkat (misal: melakukan {materi_spesifik} sambil bergerak).', experience: 'mengaplikasi' },
-                        { phase: 'Fase 5: Evaluasi & Refleksi', activity: 'Guru mengevaluasi penguasaan keterampilan melalui unjuk kerja dan mengajak siswa merefleksikan proses belajar.', experience: 'merefleksi' }
-                    ],
-                    'Tactical Games Model': [
-                        { phase: 'Fase 1: Permainan Awal (Game Form)', activity: 'Siswa memainkan permainan yang dimodifikasi (misal: 3 vs 3 di area terbatas) yang menonjolkan masalah taktis terkait {materi_spesifik}.', experience: 'mengaplikasi' },
-                        { phase: 'Fase 2: Kesadaran Taktis (Tactical Awareness)', activity: 'Guru mengajukan pertanyaan kunci untuk membangun pemahaman taktis: "Kapan waktu terbaik untuk melakukan {materi_spesifik}?", "Di mana posisi yang paling menguntungkan untuk itu?"', experience: 'memahami' },
-                        { phase: 'Fase 3: Eksekusi Keterampilan (Skill Execution)', activity: 'Guru menghentikan permainan sejenak untuk melatih keterampilan teknis ({materi_spesifik}) yang teridentifikasi sebagai solusi masalah taktis (misal: "Agar bisa melewati lawan, mari kita latih cara passing yang cepat").', experience: 'mengaplikasi' },
-                        { phase: 'Fase 4: Permainan Akhir (Modified Game)', activity: 'Siswa kembali memainkan permainan dengan menerapkan pemahaman taktis dan keterampilan yang baru dilatih untuk melihat peningkatan performa.', experience: 'mengaplikasi' },
-                        { phase: 'Fase 5: Refleksi Kinerja', activity: 'Setiap tim berdiskusi dan merefleksikan efektivitas strategi yang digunakan dan merencanakan perbaikan untuk permainan berikutnya.', experience: 'merefleksi' }
-                    ],
-                    'Cooperative Learning': [
-                        { phase: 'Fase 1: Penyampaian Tujuan & Motivasi', activity: 'Guru menjelaskan tujuan pembelajaran, tugas kelompok, sistem penilaian, dan pentingnya setiap peran dalam kerja sama tim.', experience: 'memahami' },
-                        { phase: 'Fase 2: Pembentukan Kelompok & Peran', activity: 'Siswa dibagi menjadi kelompok heterogen. Guru menetapkan peran spesifik dalam kelompok (misal: pemateri, pengamat gerak, pemberi semangat, pencatat waktu).', experience: 'mengaplikasi' },
-                        { phase: 'Fase 3: Kerja Kelompok (Positive Interdependence)', activity: 'Kelompok diberi tugas/tantangan gerak terkait {materi_spesifik} yang membutuhkan peran berbeda untuk sukses (misal: dalam drill passing, ada yang menjadi pelempar, penerima, dan pengamat yang memberi umpan balik).', experience: 'mengaplikasi' },
-                        { phase: 'Fase 4: Presentasi/Kompetisi Antar Kelompok', activity: 'Setiap kelompok mendemonstrasikan hasil latihan drill mereka, atau berkompetisi dalam sebuah "skill challenge" antar kelompok yang poinnya diakumulasi bersama.', experience: 'mengaplikasi' },
-                        { phase: 'Fase 5: Evaluasi Proses & Hasil Kelompok', activity: 'Guru bersama siswa mengevaluasi proses kerja sama (keterampilan sosial) dan pencapaian target keterampilan setiap kelompok.', experience: 'merefleksi' }
-                    ],
-                    'Project-Based Learning (PjBL)': [
-                        { phase: 'Fase 1: Pertanyaan Mendasar (Driving Question)', activity: 'Guru memantik rasa ingin tahu dengan pertanyaan proyek: "Bagaimana cara terbaik untuk mengajarkan atau mempromosikan {materi_spesifik} kepada teman seangkatan kita agar menarik dan mudah dipahami? Bisakah kita membuat sebuah video tutorial, kampanye sosial, atau acara mini-kompetisi?"', experience: 'memahami' },
-                        { phase: 'Fase 2: Merancang Proyek (Design a Plan)', activity: 'Siswa berkelompok memilih jenis proyek (video, kampanye, atau acara). Mereka kemudian merancang rencana kerja (storyboard untuk video, rencana konten untuk kampanye, atau bagan dan aturan untuk kompetisi) yang mencakup tujuan, pembagian tugas, alat/bahan, dan jadwal.', experience: 'mengaplikasi' },
-                        { phase: 'Fase 3: Melaksanakan Proyek & Monitoring (Create Project)', activity: 'Kelompok melaksanakan rencana mereka. Contoh: a) mengambil gambar untuk tutorial, b) berlatih {materi_spesifik} untuk disajikan, c) membuat poster/konten digital. Guru berperan sebagai fasilitator, memberikan masukan teknis gerak dan memonitor progres.', experience: 'mengaplikasi' },
-                        { phase: 'Fase 4: Menguji & Mempresentasikan Hasil (Assess the Outcome)', activity: 'Setiap kelompok mempresentasikan produk akhir mereka. Contoh: a) memutarkan video tutorial, b) meluncurkan kampanye, atau c) menjadi panitia dalam mini-kompetisi. Audiens (guru dan kelompok lain) memberikan umpan balik.', experience: 'mengaplikasi' },
-                        { phase: 'Fase 5: Evaluasi & Refleksi Pengalaman (Evaluate)', activity: 'Siswa dan guru merefleksikan seluruh proses proyek, membahas tantangan, pembelajaran yang didapat (soft skill dan hard skill), serta hal yang bisa diperbaiki.', experience: 'merefleksi' }
-                    ],
-                    'Problem-Based Learning (PBL)': [
-                        { phase: 'Fase 1: Orientasi Masalah', activity: 'Guru menyajikan masalah kontekstual. Contoh: "Tim kita sering kehilangan bola saat melawan tim dengan pertahanan rapat. Masalahnya apa dan bagaimana solusinya terkait keterampilan {materi_spesifik}?"', experience: 'memahami' },
-                        { phase: 'Fase 2: Mengorganisasi untuk Belajar', activity: 'Siswa berkelompok mendefinisikan masalah, menganalisis penyebab, dan menentukan informasi/keterampilan apa yang perlu dipelajari untuk menyelesaikannya.', experience: 'mengaplikasi' },
-                        { phase: 'Fase 3: Penyelidikan Individual & Kelompok', activity: 'Siswa mencari informasi, menganalisis video, dan berlatih keterampilan {materi_spesifik} yang relevan untuk menjawab masalah yang telah dirumuskan.', experience: 'mengaplikasi' },
-                        { phase: 'Fase 4: Mengembangkan & Menyajikan Solusi', activity: 'Kelompok merumuskan solusi (misal: pola serangan baru, variasi drill latihan) dan mempresentasikannya di depan kelas, lengkap dengan demonstrasi gerak.', experience: 'mengaplikasi' },
-                        { phase: 'Fase 5: Menganalisis & Mengevaluasi Proses', activity: 'Seluruh kelas berdiskusi, memberikan masukan terhadap solusi yang ditawarkan, dan merefleksikan proses pemecahan masalah yang telah dilakukan.', experience: 'merefleksi' }
-                    ],
-                    'Inquiry Learning': [
-                         { phase: 'Fase 1: Orientasi Masalah', activity: 'Guru menyajikan sebuah masalah/fenomena gerak yang membingungkan. Misal: "Mengapa bola melengkung saat ditendang dengan cara tertentu pada {materi_judul}?"', experience: 'memahami' },
-                         { phase: 'Fase 2: Merumuskan Hipotesis', activity: 'Siswa berdiskusi dan membuat dugaan awal (hipotesis) untuk menjelaskan fenomena tersebut. Misal: "Perkenaan kaki pada bola mempengaruhi arah bola."', experience: 'memahami' },
-                         { phase: 'Fase 3: Eksperimen & Pengumpulan Data', activity: 'Siswa mencoba berbagai cara melakukan {materi_spesifik} (misal: menendang dengan berbagai bagian kaki) untuk menguji hipotesis mereka, dan mencatat hasilnya.', experience: 'mengaplikasi' },
-                         { phase: 'Fase 4: Menganalisis & Menyajikan Hasil', activity: 'Siswa menganalisis data hasil percobaan mereka dan menyajikan temuan mereka (mana yang paling efektif, mana yang gagal) kepada kelas.', experience: 'mengaplikasi' },
-                         { phase: 'Fase 5: Menyimpulkan', activity: 'Siswa, dengan bimbingan guru, menarik kesimpulan tentang prinsip gerak yang berlaku pada {materi_spesifik} berdasarkan bukti dari eksperimen.', experience: 'merefleksi' }
-                    ],
-                    'Discovery Learning': [
-                        { phase: 'Fase 1: Stimulasi', activity: 'Guru memberikan stimulus berupa permainan atau tantangan gerak tanpa instruksi yang jelas mengenai cara melakukan {materi_spesifik} secara efisien.', experience: 'mengaplikasi' },
-                        { phase: 'Fase 2: Identifikasi Masalah', activity: 'Siswa didorong untuk mengidentifikasi sendiri masalah/kesulitan yang mereka hadapi dalam permainan (misal: "Sulit sekali mengoper bola ke teman yang berlari").', experience: 'memahami' },
-                        { phase: 'Fase 3: Pengumpulan & Pengolahan Data', activity: 'Siswa bereksperimen dengan berbagai solusi/gerakan untuk mengatasi masalah. Guru memfasilitasi dengan pertanyaan pancingan, bukan memberikan jawaban.', experience: 'mengaplikasi' },
-                        { phase: 'Fase 4: Verifikasi', activity: 'Siswa mencoba solusi yang mereka anggap paling efektif secara berulang. Mereka memverifikasi apakah "penemuan" teknik mereka berhasil memecahkan masalah awal.', experience: 'mengaplikasi' },
-                        { phase: 'Fase 5: Generalisasi/Kesimpulan', activity: 'Siswa mencoba menyimpulkan prinsip atau teknik ({materi_spesifik}) yang mereka temukan sendiri. Guru membantu merapikan dan memberikan terminologi yang benar.', experience: 'merefleksi' }
-                    ],
-                    'Sport Education Model (SEM)': [
-                        { phase: 'Fase 1: Pengenalan Musim Kompetisi', activity: 'Guru memperkenalkan tema musim kompetisi (misal: "Liga {materi_judul}") dan menjelaskan semua peran, aturan, dan jadwal selama musim berlangsung.', experience: 'memahami' },
-                        { phase: 'Fase 2: Afiliasi Tim & Peran', activity: 'Siswa dibagi menjadi tim tetap untuk satu musim. Setiap tim menentukan nama, logo, yel-yel, dan menunjuk anggota untuk peran otentik (Kapten, Pelatih, Wasit, Jurnalis, Analis Statistik).', experience: 'mengaplikasi' },
-                        { phase: 'Fase 3: Sesi Latihan Tim', activity: 'Tim merancang dan melaksanakan sesi latihan mandiri untuk meningkatkan keterampilan {materi_spesifik} dan strategi permainan di bawah arahan "pelatih" dari anggota tim.', experience: 'mengaplikasi' },
-                        { phase: 'Fase 4: Pertandingan Resmi (Liga/Turnamen)', activity: 'Tim saling berkompetisi dalam format liga/turnamen. Siswa dengan peran "Wasit" dan "Jurnalis" dari tim yang tidak bermain menjalankan tugasnya secara otentik.', experience: 'mengaplikasi' },
-                        { phase: 'Fase 5: Puncak Musim & Selebrasi', activity: 'Musim diakhiri dengan sebuah acara puncak (misal: babak final & festival). Guru mengumumkan juara dan memberikan penghargaan untuk berbagai kategori (Tim Fair Play, Jurnalis Terbaik, dll).', experience: 'merefleksi' }
-                    ],
-                    'Default': [ 
-                        { phase: 'Fase 1: Pemahaman Konsep', activity: 'Guru menjelaskan dan mendemonstrasikan konsep dasar dari {materi_spesifik}.', experience: 'memahami' }, 
-                        { phase: 'Fase 2: Praktik Terbimbing', activity: 'Siswa mencoba mempraktikkan {materi_spesifik} dalam sebuah aktivitas atau permainan dengan panduan guru.', experience: 'mengaplikasi' }, 
-                        { phase: 'Fase 3: Aplikasi & Eksplorasi', activity: 'Siswa menerapkan keterampilan dalam situasi yang lebih kompleks atau melakukan eksplorasi variasi gerak.', experience: 'mengaplikasi' }, 
-                        { phase: 'Fase 4: Refleksi Pembelajaran', activity: 'Siswa diajak untuk merefleksikan apa yang telah dipelajari, kesulitan, dan perasaan mereka selama aktivitas.', experience: 'merefleksi' } 
-                    ]
+                    'Direct Instruction': {
+                        'pertemuan_1': [ { phase: 'Fase 1: Menyampaikan Tujuan & Mempersiapkan Siswa', activity: 'Guru menjelaskan tujuan pembelajaran, capaian, dan melakukan apersepsi terkait {materi_spesifik}.', experience: 'memahami' }, { phase: 'Fase 2: Demonstrasi (I Do)', activity: 'Guru mendemonstrasikan keterampilan {materi_spesifik} secara benar, jelas, dan bertahap (misal: posisi awal, gerakan inti, akhiran).', experience: 'memahami' } ],
+                        'pertemuan_2': [ { phase: 'Fase 3: Latihan Terbimbing (We Do)', activity: 'Siswa meniru gerakan dengan bimbingan dan umpan balik korektif langsung dari guru.', experience: 'mengaplikasi' }, { phase: 'Fase 4: Latihan Mandiri & Penerapan (You Do)', activity: 'Siswa berlatih mandiri atau berpasangan untuk memantapkan gerakan dalam situasi yang dimodifikasi (misal: dengan target, dengan lawan pasif).', experience: 'mengaplikasi' } ]
+                    },
+                    'Tactical Games Model': {
+                        'pertemuan_1': [ { phase: 'Fase 1: Permainan Awal (Game Form)', activity: 'Siswa memainkan permainan yang dimodifikasi terkait {materi_spesifik} untuk mengidentifikasi masalah taktis (misal: "Sulit sekali mencetak skor!").', experience: 'mengaplikasi' }, { phase: 'Fase 2: Kesadaran Taktis (Tactical Awareness)', activity: 'Guru mengajukan pertanyaan kunci untuk membangun pemahaman taktis: "Kapan waktu terbaik untuk {materi_spesifik}?", "Di mana posisi yang paling menguntungkan untuk menerima bola?"', experience: 'memahami' } ],
+                        'pertemuan_2': [ { phase: 'Fase 3: Eksekusi Keterampilan (Skill Execution)', activity: 'Siswa berlatih keterampilan teknis ({materi_spesifik}) yang dibutuhkan untuk memecahkan masalah taktis yang telah diidentifikasi dalam sesi latihan terfokus.', experience: 'mengaplikasi' }, { phase: 'Fase 4: Permainan Akhir (Modified Game)', activity: 'Siswa kembali memainkan permainan dengan menerapkan pemahaman taktis dan keterampilan yang baru dilatih, dengan kompleksitas yang ditingkatkan.', experience: 'mengaplikasi' } ]
+                    },
+                    'Cooperative Learning': {
+                        'pertemuan_1': [ { phase: 'Fase 1: Penyampaian Tujuan & Motivasi', activity: 'Guru menjelaskan tujuan pembelajaran, tugas kelompok, dan menekankan pentingnya setiap peran dalam mencapai keberhasilan tim.', experience: 'memahami' }, { phase: 'Fase 2: Pembentukan Kelompok & Peran', activity: 'Siswa dibagi menjadi kelompok heterogen dengan peran yang jelas (misal: pengamat teknik, ahli strategi, pencatat waktu, motivator).', experience: 'mengaplikasi' } ],
+                        'pertemuan_2': [ { phase: 'Fase 3: Kerja Kelompok (Positive Interdependence)', activity: 'Kelompok diberi tugas/tantangan gerak terkait {materi_spesifik} yang hanya bisa diselesaikan dengan kontribusi aktif dari setiap anggota sesuai perannya.', experience: 'mengaplikasi' }, { phase: 'Fase 4: Presentasi/Kompetisi Antar Kelompok', activity: 'Setiap kelompok menampilkan hasil kerja (misal: rangkaian gerak, strategi permainan) atau berkompetisi secara sportif.', experience: 'mengaplikasi' } ]
+                    },
+                    'Project-Based Learning (PjBL)': {
+                        'pertemuan_1': [ { phase: 'Fase 1: Pertanyaan Mendasar (Driving Question)', activity: 'Guru mengajukan pertanyaan pemicu: "Bagaimana kita bisa merancang sebuah *kampanye gaya hidup sehat* / *video tutorial teknik {materi_spesifik}* / *acara olahraga kecil* untuk sekolah kita?"', experience: 'memahami' }, { phase: 'Fase 2: Merancang Proyek', activity: 'Siswa secara berkelompok menyusun *rencana aksi* proyek: menentukan nama proyek, tujuan yang ingin dicapai, siapa targetnya, dan alat/bahan yang dibutuhkan.', experience: 'mengaplikasi' } ],
+                        'pertemuan_2': [ { phase: 'Fase 3: Latihan & Pengambilan Data/Gambar (Lapangan)', activity: 'Siswa berlatih teknik {materi_spesifik} untuk memastikan gerakan mereka benar, lalu mulai merekam adegan-adegan untuk video tutorial mereka.', experience: 'mengaplikasi' }, { phase: 'Fase 4: Pengembangan Produk (Kelas)', activity: 'Di dalam kelas, kelompok menyatukan klip video, menambahkan teks atau suara, dan menyelesaikan produk akhir mereka.', experience: 'mengaplikasi' } ],
+                        'pertemuan_3': [ { phase: 'Fase 5: Presentasi Hasil', activity: 'Setiap kelompok *mendemonstrasikan* produk akhir proyeknya (misal: menampilkan video, menggelar pameran poster) dan menerima umpan balik.', experience: 'merefleksi' }, { phase: 'Fase 6: Evaluasi & Refleksi Pengalaman', activity: 'Siswa dan guru merefleksikan proses proyek, tantangan yang dihadapi, pembelajaran yang didapat, dan dampak dari proyek tersebut.', experience: 'merefleksi' } ]
+                    },
+                    'Sport Education Model (SEM)': {
+                        'pertemuan_1': [ { phase: 'Fase 1: Pengenalan Musim Kompetisi', activity: 'Guru memperkenalkan tema musim kompetisi (misal: "Liga Bola Voli Antar Tim Kelas XI") dan menjelaskan semua peran yang ada.', experience: 'memahami' }, { phase: 'Fase 2: Afiliasi Tim & Peran', activity: 'Siswa dibagi menjadi tim tetap, menentukan nama, logo, dan menunjuk peran (kapten, pelatih, wasit, jurnalis, statistikawan).', experience: 'mengaplikasi' } ],
+                        'pertemuan_2': [ { phase: 'Fase 3: Sesi Latihan Tim', activity: 'Tim berlatih keterampilan {materi_spesifik} dan strategi permainan di bawah arahan "pelatih" dari anggota tim, dengan sesi latihan yang terstruktur.', experience: 'mengaplikasi' }, { phase: 'Fase 4: Pertandingan Resmi (Liga/Turnamen)', activity: 'Tim saling berkompetisi dalam format liga. "Wasit" dan "jurnalis" dari tim yang tidak bermain menjalankan perannya secara aktif.', experience: 'mengaplikasi' } ]
+                    },
+                    'Default': {
+                        'pertemuan_1': [ { phase: 'Fase 1: Pemahaman Konsep', activity: 'Guru menjelaskan dan mendemonstrasikan konsep dasar dari {materi_spesifik}.', experience: 'memahami' }, { phase: 'Fase 2: Praktik Terbimbing', activity: 'Siswa mencoba mempraktikkan {materi_spesifik} dalam sebuah aktivitas atau permainan dengan panduan guru.', experience: 'mengaplikasi' } ],
+                        'pertemuan_2': [ { phase: 'Fase 3: Aplikasi & Eksplorasi', activity: 'Siswa menerapkan keterampilan dalam situasi yang lebih kompleks atau melakukan eksplorasi variasi gerak.', experience: 'mengaplikasi' }, { phase: 'Fase 4: Refleksi Pembelajaran', activity: 'Siswa diajak untuk merefleksikan apa yang telah dipelajari, kesulitan, dan perasaan mereka selama aktivitas.', experience: 'merefleksi' } ]
+                    }
                 }
             };
             
@@ -617,21 +637,15 @@
 
             function buildLangkahPembelajaran(d) {
                 let allMeetingsHTML = '';
-                const { alokasiWaktu, modelPembelajaran, materiSpesifik, materiJudul, includeCoding, codingTime } = d;
+                const { alokasiWaktu, modelPembelajaran, materiSpesifik, materiJudul, materiKey, elemenCp, includeCoding, codingTime } = d;
                 const totalMenitPerPertemuan = alokasiWaktu.jpPerPertemuan * alokasiWaktu.menitPerJP;
+                const durasiPendahuluan = Math.round(totalMenitPerPertemuan * 0.15);
+                const durasiPenutup = Math.round(totalMenitPerPertemuan * 0.15);
+                let durasiInti = totalMenitPerPertemuan - durasiPendahuluan - durasiPenutup;
                 
-                let durasiIntiAwal = totalMenitPerPertemuan - (Math.round(totalMenitPerPertemuan * 0.15) * 2);
-                let durasiIntiRevisi = durasiIntiAwal;
-
-                if(includeCoding && codingTime > 0 && codingTime < durasiIntiAwal) {
-                    durasiIntiRevisi = durasiIntiAwal - codingTime;
+                if (includeCoding && codingTime > 0 && codingTime < durasiInti) {
+                    durasiInti -= codingTime;
                 }
-
-                const durasi = { 
-                    pendahuluan: Math.round(totalMenitPerPertemuan * 0.15), 
-                    penutup: Math.round(totalMenitPerPertemuan * 0.15), 
-                    inti: durasiIntiRevisi
-                };
 
                 const placeholderMateri = materiSpesifik || materiJudul.replace(/Aktivitas.*?:\s*|Permainan\s*|Kesehatan:\s*|Pembelajaran\s*|Evaluasi\s*/, '').trim();
 
@@ -639,60 +653,61 @@
                     const pertemuanKe = i + 1;
                     let kegiatanHTML = `<h4>Pertemuan Ke-${pertemuanKe} (${alokasiWaktu.jpPerPertemuan} JP x ${alokasiWaktu.menitPerJP} Menit)</h4>`;
                     
-                    kegiatanHTML += `<p><strong>Kegiatan Pendahuluan (${durasi.pendahuluan} Menit):</strong></p><ol>
+                    kegiatanHTML += `<p><strong>Kegiatan Pendahuluan (${durasiPendahuluan} Menit):</strong></p><ol>
                         <li>Guru membuka pelajaran, berdoa, memeriksa kehadiran, dan memastikan kesiapan siswa. ${getLearningLabel("mindful")}</li>
                         <li>Apersepsi: Guru mengaitkan materi dengan pengalaman siswa atau isu terkini dalam olahraga. ${getLearningLabel("meaningful")}</li>
-                        <li>Guru menyampaikan tujuan pembelajaran, kriteria asesmen, dan alur kegiatan. ${getPengalamanLabel('memahami')}</li>
+                        <li>Guru menyampaikan tujuan pembelajaran, kriteria asesmen, dan alur kegiatan untuk pertemuan ini. ${getPengalamanLabel('memahami')}</li>
                         <li>Pemanasan dinamis dan permainan fungsional yang relevan dengan materi inti. ${getLearningLabel("joyful")}</li>
                     </ol>`;
 
-                    kegiatanHTML += `<p><strong>Kegiatan Inti (${durasiIntiAwal} Menit):</strong></p>`;
+                    kegiatanHTML += `<p><strong>Kegiatan Inti (${durasiInti + (includeCoding ? codingTime : 0)} Menit):</strong></p>`;
                     
-                    let modelSintaks = JSON.parse(JSON.stringify(sintaksDatabase.default[modelPembelajaran] || sintaksDatabase.default['Default']));
+                    let kategori = 'default';
+                    if (materiKey.includes('invasi')) kategori = 'invasi';
+                    else if (materiKey.includes('net')) kategori = 'net';
+                    else if (materiKey.includes('senam') || materiKey.includes('berirama')) kategori = 'senam';
+                    else if (materiKey.includes('atletik')) kategori = 'atletik';
+                    else if (materiKey.includes('kebugaran')) kategori = 'kebugaran';
+                    else if (materiKey.includes('pencegahan') || materiKey.includes('rjp') || materiKey.includes('kesehatan')) kategori = 'kesehatan';
+
+                    let rencanaLengkap = (sintaksDatabase.kontekstual[kategori] && sintaksDatabase.kontekstual[kategori][elemenCp] && sintaksDatabase.kontekstual[kategori][elemenCp][modelPembelajaran])
+                        ? sintaksDatabase.kontekstual[kategori][elemenCp][modelPembelajaran]
+                        : (sintaksDatabase.default[modelPembelajaran] || sintaksDatabase.default['Default']);
                     
-                    // *** NEW: Insert Optional Coding Activity ***
-                    if(includeCoding) {
-                        const enrichmentStep = {
-                            isEnrichment: true,
-                            content: `⭐ <strong>Aktivitas Pengayaan (Opsional): Coding PJOK (${codingTime} Menit)</strong><br>Untuk memperdalam pemahaman melalui pendekatan komputasional, lakukan aktivitas 'Coding PJOK' yang terdapat pada <strong>Lampiran G.3</strong>. Aktivitas ini dirancang untuk menghubungkan konsep gerak dengan logika berpikir terstruktur.`
-                        };
-                        if (modelSintaks.length > 1) {
-                            modelSintaks.splice(modelSintaks.length - 1, 0, enrichmentStep);
-                        } else {
-                            modelSintaks.push(enrichmentStep);
-                        }
-                    }
+                    const totalSiklus = Object.keys(rencanaLengkap).length;
+                    const kunciPertemuan = `pertemuan_${(i % totalSiklus) + 1}`;
+                    let modelSintaks = rencanaLengkap[kunciPertemuan] || rencanaLengkap[Object.keys(rencanaLengkap).pop()];
 
                     kegiatanHTML += `<p>Sintaks Model ${modelPembelajaran}:</p><table style="width: 100%; border-collapse: collapse; margin-top: 1em; font-size: 0.9em; page-break-inside: avoid;">
                         <thead style="background-color: #f9fafb;"><tr>
                             <th style="width: 25%; border: 1px solid #d1d5db; padding: 0.75rem; text-align: left; font-weight: 600;">Fase Pembelajaran</th>
-                            <th style="border: 1px solid #d1d5db; padding: 0.75rem; text-align: left; font-weight: 600;">Aktivitas Guru dan Peserta Didik (Alokasi: ${durasi.inti} Menit)</th>
+                            <th style="border: 1px solid #d1d5db; padding: 0.75rem; text-align: left; font-weight: 600;">Aktivitas Guru dan Peserta Didik (Alokasi: ${durasiInti} Menit)</th>
                             <th style="width: 20%; border: 1px solid #d1d5db; padding: 0.75rem; text-align: left; font-weight: 600;">Pengalaman Belajar</th>
                         </tr></thead><tbody>`;
 
                     modelSintaks.forEach(step => {
-                        if (step.isEnrichment) {
-                            kegiatanHTML += `
-                                <tr>
-                                    <td colspan="3" style="border: 1px solid #d1d5db; padding: 0.75rem; background-color: #fefce8;">
-                                        ${step.content}
-                                    </td>
-                                </tr>`;
-                        } else {
-                            const activityText = step.activity
-                                .replace(/{materi_spesifik}/g, `<strong>${placeholderMateri}</strong>`)
-                                .replace(/{materi_judul}/g, `<strong>${materiJudul.replace(/Permainan.*?\(|\)/g, '').trim()}</strong>`);
-                            kegiatanHTML += `<tr>
-                                <td style="border: 1px solid #d1d5db; padding: 0.75rem; font-weight: 600; vertical-align: top;">${step.phase}</td>
-                                <td style="border: 1px solid #d1d5db; padding: 0.75rem; vertical-align: top;">${activityText} ${getLearningLabel(activityText)}</td>
-                                <td style="border: 1px solid #d1d5db; padding: 0.75rem; vertical-align: top;">${getPengalamanLabel(step.experience)}</td>
-                            </tr>`;
-                        }
+                        const activityText = step.activity.replace(/{materi_spesifik}/g, `<strong>${placeholderMateri}</strong>`);
+                        kegiatanHTML += `<tr>
+                            <td style="border: 1px solid #d1d5db; padding: 0.75rem; font-weight: 600; vertical-align: top;">${step.phase}</td>
+                            <td style="border: 1px solid #d1d5db; padding: 0.75rem; vertical-align: top;">${activityText} ${getLearningLabel(activityText)}</td>
+                            <td style="border: 1px solid #d1d5db; padding: 0.75rem; vertical-align: top;">${getPengalamanLabel(step.experience)}</td>
+                        </tr>`;
                     });
+
+                    if (includeCoding) {
+                         kegiatanHTML += `
+                            <tr>
+                                <td style="border: 1px solid #d1d5db; padding: 0.75rem; background-color: #fefce8; font-weight: 600; vertical-align: top;">Aktivitas Pengayaan</td>
+                                <td colspan="2" style="border: 1px solid #d1d5db; padding: 0.75rem; background-color: #fefce8;">
+                                    ⭐ <strong>Coding PJOK (${codingTime} Menit)</strong><br>
+                                    Untuk memperdalam pemahaman melalui pendekatan komputasional, lakukan aktivitas 'Coding PJOK' yang terdapat pada <strong>Lampiran G.3</strong>. Aktivitas ini dirancang untuk menghubungkan konsep gerak dengan logika berpikir terstruktur.
+                                </td>
+                            </tr>`;
+                    }
 
                     kegiatanHTML += `</tbody></table>`;
                     
-                    kegiatanHTML += `<p><strong>Kegiatan Penutup (${durasi.penutup} Menit):</strong></p><ol>
+                    kegiatanHTML += `<p><strong>Kegiatan Penutup (${durasiPenutup} Menit):</strong></p><ol>
                         <li>Pendinginan dengan peregangan statis untuk mengembalikan kondisi tubuh. ${getLearningLabel("mindful")}</li>
                         <li>Siswa dan guru melakukan refleksi dan menyimpulkan pembelajaran hari ini. ${getPengalamanLabel('merefleksi')}</li>
                         <li>Guru memberikan umpan balik umum dan apresiasi terhadap usaha seluruh siswa.</li>
@@ -708,8 +723,7 @@
             }
 
             function buildAsesmenSection(d) {
-                const placeholderMateri = d.materiSpesifik || d.materiJudul.replace(/Aktivitas.*?:\s*/, '').trim();
-                return `
+                 return `
                     <p>Penilaian dilakukan secara komprehensif mencakup asesmen diagnostik, formatif, dan sumatif untuk mengukur ketercapaian tujuan pembelajaran dari aspek sikap, pengetahuan, dan keterampilan.</p>
                     
                     <h3 class="subsection-title">1. Asesmen Diagnostik</h3>
@@ -720,7 +734,7 @@
                             <tr>
                                 <td><strong>Kognitif</strong></td>
                                 <td>Tanya jawab lisan</td>
-                                <td>Pertanyaan pemantik terkait konsep dasar ${placeholderMateri}.</td>
+                                <td>Pertanyaan pemantik terkait konsep dasar ${d.materiSpesifik || d.materiJudul}.</td>
                             </tr>
                             <tr>
                                 <td><strong>Non-Kognitif</strong></td>
@@ -735,88 +749,88 @@
                     <table class="info-table">
                          <thead><tr><th>Aspek yang Dinilai</th><th>Teknik & Bentuk Penilaian</th><th>Instrumen</th></tr></thead>
                          <tbody>
-                            <tr>
-                                <td><strong>Sikap</strong><br><small>(Profil Pelajar Pancasila: Kolaborasi, Penalaran Kritis)</small></td>
-                                <td>
-                                    <strong>Teknik:</strong> Observasi<br>
-                                    <strong>Bentuk:</strong>
-                                    <ul>
-                                        <li>Penilaian oleh Guru</li>
-                                        <li>Penilaian Diri (Self-Assessment)</li>
-                                        <li>Penilaian Antar Teman (Peer-Assessment)</li>
-                                    </ul>
-                                </td>
-                                <td>
-                                    <ul>
-                                        <li>Jurnal Sikap Guru</li>
-                                        <li>Lembar Observasi Sikap</li>
-                                    </ul>
-                                    <em>(Lihat contoh format di Lampiran G.2)</em>
-                                </td>
-                            </tr>
                              <tr>
-                                <td><strong>Pengetahuan</strong><br><small>(Analisis konsep & strategi)</small></td>
-                                <td>
-                                    <strong>Teknik:</strong> Lisan, Tertulis<br>
-                                    <strong>Bentuk:</strong>
-                                    <ul>
-                                        <li>Tanya Jawab</li>
-                                        <li>Diskusi Kelompok</li>
-                                        <li>Kuis singkat</li>
-                                    </ul>
-                                </td>
+                                 <td><strong>Sikap</strong><br><small>(Profil Pelajar Pancasila: Kolaborasi, Penalaran Kritis)</small></td>
                                  <td>
-                                    <ul>
-                                        <li>Pertanyaan lisan saat pembelajaran</li>
-                                        <li>Lembar Kerja Peserta Didik (LKPD)</li>
-                                    </ul>
-                                     <em>(Lihat contoh di Lampiran G.1)</em>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><strong>Keterampilan</strong><br><small>(Penguasaan gerak ${placeholderMateri})</small></td>
-                                <td>
-                                    <strong>Teknik:</strong> Unjuk Kerja<br>
-                                    <strong>Bentuk:</strong>
+                                     <strong>Teknik:</strong> Observasi<br>
+                                     <strong>Bentuk:</strong>
                                      <ul>
-                                        <li>Observasi proses</li>
-                                        <li>Penilaian unjuk kerja</li>
-                                    </ul>
-                                </td>
+                                         <li>Penilaian oleh Guru</li>
+                                         <li>Penilaian Diri (Self-Assessment)</li>
+                                         <li>Penilaian Antar Teman (Peer-Assessment)</li>
+                                     </ul>
+                                 </td>
                                  <td>
-                                    <ul>
-                                        <li>Checklist Keterampilan</li>
-                                        <li>Rubrik Penilaian Keterampilan</li>
-                                    </ul>
-                                    <em>(Lihat contoh rubrik di Lampiran G.2)</em>
-                                </td>
-                            </tr>
+                                     <ul>
+                                         <li>Jurnal Sikap Guru</li>
+                                         <li>Lembar Observasi Sikap</li>
+                                     </ul>
+                                     <em>(Lihat contoh format di Lampiran G.2)</em>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td><strong>Pengetahuan</strong><br><small>(Analisis konsep & strategi)</small></td>
+                                 <td>
+                                     <strong>Teknik:</strong> Lisan, Tertulis<br>
+                                     <strong>Bentuk:</strong>
+                                     <ul>
+                                         <li>Tanya Jawab</li>
+                                         <li>Diskusi Kelompok</li>
+                                         <li>Kuis singkat</li>
+                                     </ul>
+                                 </td>
+                                 <td>
+                                     <ul>
+                                         <li>Pertanyaan lisan saat pembelajaran</li>
+                                         <li>Lembar Kerja Peserta Didik (LKPD)</li>
+                                     </ul>
+                                     <em>(Lihat contoh di Lampiran G.1)</em>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td><strong>Keterampilan</strong><br><small>(Penguasaan gerak ${d.materiSpesifik || d.materiJudul})</small></td>
+                                 <td>
+                                     <strong>Teknik:</strong> Unjuk Kerja<br>
+                                     <strong>Bentuk:</strong>
+                                     <ul>
+                                         <li>Observasi proses</li>
+                                         <li>Penilaian unjuk kerja</li>
+                                     </ul>
+                                 </td>
+                                 <td>
+                                     <ul>
+                                         <li>Checklist Keterampilan</li>
+                                         <li>Rubrik Penilaian Keterampilan</li>
+                                     </ul>
+                                     <em>(Lihat contoh rubrik di Lampiran G.2)</em>
+                                 </td>
+                             </tr>
                          </tbody>
                     </table>
 
                     <h3 class="subsection-title">3. Asesmen Sumatif</h3>
                     <p>Dilakukan di akhir unit pembelajaran untuk mengukur ketercapaian tujuan secara keseluruhan.</p>
-                     <table class="info-table">
+                    <table class="info-table">
                          <thead><tr><th>Aspek yang Dinilai</th><th>Teknik & Bentuk Penilaian</th><th>Instrumen</th></tr></thead>
                          <tbody>
-                            <tr>
-                                <td><strong>Pengetahuan & Keterampilan</strong></td>
-                                <td>
-                                    <strong>Teknik:</strong> Unjuk Kerja, Proyek<br>
-                                    <strong>Bentuk:</strong>
-                                    <ul>
-                                        <li>Tes Keterampilan ${placeholderMateri}</li>
-                                        <li>Presentasi Proyek (jika menggunakan PjBL)</li>
-                                    </ul>
-                                </td>
+                             <tr>
+                                 <td><strong>Pengetahuan & Keterampilan</strong></td>
                                  <td>
-                                    <ul>
-                                        <li>Rubrik Penilaian Keterampilan</li>
-                                        <li>Rubrik Penilaian Proyek</li>
-                                    </ul>
-                                    <em>(Lihat contoh rubrik di Lampiran G.2)</em>
-                                </td>
-                            </tr>
+                                     <strong>Teknik:</strong> Unjuk Kerja, Proyek<br>
+                                     <strong>Bentuk:</strong>
+                                     <ul>
+                                         <li>Tes Keterampilan ${d.materiSpesifik || d.materiJudul}</li>
+                                         <li>Presentasi Proyek (jika menggunakan PjBL)</li>
+                                     </ul>
+                                 </td>
+                                 <td>
+                                     <ul>
+                                         <li>Rubrik Penilaian Keterampilan</li>
+                                         <li>Rubrik Penilaian Proyek</li>
+                                     </ul>
+                                     <em>(Lihat contoh rubrik di Lampiran G.2)</em>
+                                 </td>
+                             </tr>
                          </tbody>
                     </table>
                 `;
@@ -976,33 +990,23 @@
 
             // --- FUNGSI-FUNGSI BANTUAN AI (GEMINI) ---
             async function callGemini(prompt) {
-                // **MODIFIKASI PENTING:** URL API diubah untuk memanggil Netlify Function
-                const apiUrl = '/.netlify/functions/gemini';
-                
+                // Perubahan: Panggil Netlify Function, bukan API Google langsung
+                const functionUrl = '/.netlify/functions/gemini';
                 try {
-                    const response = await fetch(apiUrl, { 
+                    const response = await fetch(functionUrl, { 
                         method: 'POST', 
                         headers: { 'Content-Type': 'application/json' }, 
-                        // Body sekarang hanya mengirimkan prompt, karena API Key ditangani di backend
                         body: JSON.stringify({ prompt: prompt }) 
                     });
-                    
                     if (!response.ok) {
-                        const errorData = await response.json();
-                        throw new Error(`API Error: ${response.status} - ${errorData.error || response.statusText}`);
+                        const errorData = await response.text();
+                        throw new Error(`Function Error: ${response.status} ${response.statusText} - ${errorData}`);
                     }
-                    
                     const result = await response.json();
-                    
-                    // Struktur respons dari Netlify Function mungkin sedikit berbeda, kita sesuaikan
-                    if (result.text) {
-                        return result.text;
-                    }
-                    throw new Error("Respons dari server tidak valid.");
-
+                    return result.text;
                 } catch (error) {
                     console.error("callGemini Error:", error);
-                    return `Terjadi kesalahan saat menghubungi server: ${error.message}. Mohon coba lagi.`;
+                    return `Terjadi kesalahan saat memanggil fungsi: ${error.message}. Mohon coba lagi.`;
                 }
             }
 
@@ -1053,11 +1057,7 @@
                 ui.gemini.materiBtn.addEventListener('click', () => { 
                     const d = getFormInputs(); 
                     const title = `Materi Mendalam: ${d.materiJudul}`;
-                    // --- PERBAIKAN DI SINI ---
-                    // Prompt lama yang terlalu kompleks:
-                    // const prompt = `Sebagai ahli materi PJOK SMA, jelaskan materi '${d.materiJudul}' (fokus: ${d.materiSpesifik || 'dasar'}) untuk siswa Kelas ${d.kelas}. Sertakan konsep kunci, prinsip biomekanik, analisis kesalahan umum, dan tips perbaikan.` + geminiPromptSuffix;
-                    // Prompt baru yang lebih sederhana untuk menghindari timeout:
-                    const prompt = `Sebagai ahli materi PJOK, buat ringkasan materi ajar untuk '${d.materiJudul}' (fokus pada: ${d.materiSpesifik || 'dasar'}) bagi siswa SMA Kelas ${d.kelas}. Tulis dalam poin-poin utama yang mencakup: 1. Konsep Kunci, 2. Kesalahan Umum, dan 3. Tips Perbaikan.` + geminiPromptSuffix;
+                    const prompt = `Sebagai ahli materi PJOK SMA, jelaskan materi '${d.materiJudul}' (fokus: ${d.materiSpesifik || 'dasar'}) untuk siswa Kelas ${d.kelas}. Sertakan konsep kunci, prinsip biomekanik, analisis kesalahan umum, dan tips perbaikan.` + geminiPromptSuffix;
                     handleGeminiRequest(ui.gemini.materiBtn, '📚', title, prompt);
                 });
 

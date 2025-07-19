@@ -1,35 +1,29 @@
-// Mengimpor 'fetch' jika belum tersedia secara global (best practice untuk Netlify Functions)
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+// Import 'fetch' jika Anda menggunakan versi Node.js yang lebih lama dari 18
+// Di lingkungan Netlify Functions modern, 'fetch' sudah tersedia secara global.
+// const fetch = require('node-fetch'); // Uncomment jika perlu
 
 exports.handler = async (event) => {
-  // 1. Memeriksa apakah metode request adalah POST. Jika tidak, tolak.
+  // Hanya izinkan metode POST
   if (event.httpMethod !== 'POST') {
-    return {
-      statusCode: 405, // Method Not Allowed
-      body: JSON.stringify({ error: 'Hanya metode POST yang diizinkan' }),
-    };
+    return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
   try {
-    // 2. Mengambil API Key dari environment variables di Netlify.
-    //    Ini adalah cara yang aman untuk menyimpan kunci rahasia.
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) {
-      throw new Error("GEMINI_API_KEY tidak ditemukan di environment variables.");
-    }
-
-    // 3. Mengurai (parse) body dari request yang dikirim oleh frontend (index.html).
-    //    Kita mengharapkan sebuah objek JSON dengan properti 'prompt'.
+    // Ambil 'prompt' dari body permintaan yang dikirim dari front-end
     const { prompt } = JSON.parse(event.body);
-    if (!prompt) {
-      return {
-        statusCode: 400, // Bad Request
-        body: JSON.stringify({ error: 'Request body harus berisi "prompt".' }),
-      };
-    }
 
-    // 4. Mempersiapkan payload untuk dikirim ke Google Gemini API.
+    // Ambil API Key dari environment variables di Netlify
+    // Ini cara yang aman untuk menyimpan kunci rahasia
+    const apiKey = process.env.GEMINI_API_KEY;
+
+    if (!apiKey) {
+      throw new Error("API key untuk Gemini tidak diatur di environment variables.");
+    }
+    
+    // URL endpoint API Gemini
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+    
+    // Siapkan payload sesuai format yang dibutuhkan Gemini API
     const payload = {
       contents: [{
         parts: [{
@@ -38,7 +32,7 @@ exports.handler = async (event) => {
       }]
     };
 
-    // 5. Melakukan panggilan (fetch) ke Google Gemini API.
+    // Lakukan panggilan ke Gemini API
     const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
@@ -47,32 +41,28 @@ exports.handler = async (event) => {
       body: JSON.stringify(payload),
     });
 
-    // 6. Memeriksa apakah panggilan API berhasil.
+    // Jika respons dari Gemini tidak OK, lemparkan error
     if (!response.ok) {
       const errorData = await response.json();
-      console.error('Error dari Gemini API:', errorData);
-      return {
-        statusCode: response.status,
-        body: JSON.stringify({ error: `Error dari Gemini API: ${errorData.error?.message || response.statusText}` }),
-      };
+      console.error('Gemini API Error:', errorData);
+      throw new Error(`Gemini API merespons dengan status ${response.status}`);
     }
 
-    // 7. Mengambil data JSON dari respons API.
+    // Ambil data JSON dari respons
     const result = await response.json();
 
-    // 8. Mengekstrak teks yang dihasilkan dari respons.
-    const generatedText = result.candidates?.[0]?.content?.parts?.[0]?.text || "";
+    // Ekstrak teks yang dihasilkan dari respons
+    const generatedText = result.candidates[0]?.content?.parts[0]?.text || "Maaf, tidak ada konten yang bisa dihasilkan.";
 
-    // 9. Mengirimkan kembali teks yang berhasil dibuat ke frontend (index.html).
+    // Kirim kembali teks yang berhasil dihasilkan ke front-end
     return {
       statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text: generatedText }),
     };
 
   } catch (error) {
-    // 10. Menangani segala jenis error yang mungkin terjadi (misal: JSON tidak valid, network error).
-    console.error('Internal Server Error:', error);
+    // Tangani jika ada error selama proses
+    console.error('Error di dalam Netlify Function:', error);
     return {
       statusCode: 500,
       body: JSON.stringify({ error: error.message }),

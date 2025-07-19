@@ -1,6 +1,16 @@
+# File konfigurasi untuk Netlify
+
 [build]
-  command = "echo 'Tidak ada build command'"
+  # Direktori di mana file-file publik (seperti index.html) berada.
+  # "." berarti direktori utama (root) dari proyek Anda.
   publish = "."
 
-[functions]
-  directory = "netlify/functions"
+  # Direktori di mana Netlify akan menemukan serverless functions Anda.
+  functions = "netlify/functions"
+
+# Anda bisa menambahkan pengaturan redirect atau header di sini jika diperlukan
+# Contoh:
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200
